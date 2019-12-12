@@ -17,16 +17,12 @@ struct Rect: View {
             self.rect = geometry.frame(in: .global)
     }
 
-
         return Rectangle()
                 .fill(Color.black)
                 .frame(width: geometry.size.width - 20,
                        height: geometry.size.height / 4 - 5)
                 .cornerRadius(8)
                 .shadow(radius: 8)
-                .padding()
-        //        .scaleEffect(self.touchState.isActive  ? 1.1 : 1)
-                .animation(.default)
     }
     var body: some View {
         GeometryReader { g in

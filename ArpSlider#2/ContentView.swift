@@ -7,11 +7,14 @@
 //
 
 import SwiftUI
+import AudioKit
+
 
 struct ContentView: View {
-//    @State var notes: 
+    @State var notes: [MIDINoteNumber] = [60,63,67,72,74]
+    
     var body: some View {
-        Text("Hello World")
+        TouchPad()
     }
 }
 
