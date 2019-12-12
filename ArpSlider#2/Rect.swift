@@ -11,6 +11,7 @@ import SwiftUI
 struct Rect: View {
 
     @Binding var rect: CGRect
+    var color: Color
 
     func getRect(_ geometry: GeometryProxy)  -> some View {
         DispatchQueue.main.async {
@@ -18,9 +19,9 @@ struct Rect: View {
     }
 
         return Rectangle()
-                .fill(Color.black)
+                .fill(color)
                 .frame(width: geometry.size.width - 20,
-                       height: geometry.size.height / 4 - 5)
+                       height: geometry.size.height - 5)
                 .cornerRadius(8)
                 .shadow(radius: 8)
     }
@@ -35,6 +36,6 @@ struct Rect: View {
 
 struct TouchView_Previews: PreviewProvider {
     static var previews: some View {
-        Rect(rect: .constant(CGRect(x: 1, y: 1, width: 1, height: 1)))
+        Rect(rect: .constant(CGRect(x: 1, y: 1, width: 1, height: 1)), color: .black)
     }
 }

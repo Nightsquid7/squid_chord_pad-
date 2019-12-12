@@ -12,9 +12,30 @@ import AudioKit
 
 struct ContentView: View {
     @State var notes: [MIDINoteNumber] = [60,63,67,72,74]
-    
+    @State var osc = AKOscillatorBank()
+
+    init() {
+        osc.waveform = AKTable(.sawtooth)
+        osc.attackDuration = 0.0
+        osc.decayDuration = 0.3
+        osc.sustainLevel = 0.1
+        osc.releaseDuration = 0.7
+
+        AudioKit.output = osc
+
+        do {
+            try AudioKit.start()
+        } catch {
+            print(error)
+        }
+    }
+
     var body: some View {
-        TouchPad()
+        GeometryReader { g in
+            VStack {
+                TouchPad(osc: self.$osc)
+            }
+        }
     }
 }
 
