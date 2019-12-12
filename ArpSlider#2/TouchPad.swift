@@ -10,7 +10,7 @@ import SwiftUI
 import AudioKit
 struct TouchPad: View {
 
-//    @GestureState var touchState: Bool = false 
+    @GestureState var touchState: Bool = false
     @State var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74]
     @State var count: Int = 7
     @State var rects = [CGRect]()
@@ -40,6 +40,7 @@ struct TouchPad: View {
         (0...120).forEach {
             osc.stop(noteNumber: $0)
         }
+        lastPlayedNote = 0
     }
 
     // initialize self.rects
@@ -51,25 +52,7 @@ struct TouchPad: View {
     }
 
     var body: some View {
-//        let longPress = LongPressGesture()
-//            .sequenced(before: DragGesture(minimumDistance: 0))
-//            .updating(self.$touchState) { value,state, transaction in
-//                switch value {
-//                case .first(true):
-//                    print("touch started")
-//                }
-//                let drag = DragGesture(minimumDistance: 0)
-//                    .onChanged{ value in
-//                        for (index, rect) in self.rects.enumerated() {
-//                            if rect.contains(value.location) {
-//                                self.playNote(at: index)
-//                            }
-//                        }
-//                }
-//                .onEnded { value in
-//                    self.stopAll()
-//                }
-//        }
+        
         return VStack {
             if self.isLoaded {
                 ForEach(0..<self.notes.count) { index in
