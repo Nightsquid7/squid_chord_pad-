@@ -10,9 +10,9 @@ import SwiftUI
 import AudioKit
 struct TouchPad: View {
 
-    @GestureState var touchState: Bool = false
-    @State var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74]
-    @State var count: Int = 7
+
+    @Binding var notes: [MIDINoteNumber]//  = [48,55,60,63,67,72,74]
+    @State var count: Int = 0
     @State var rects = [CGRect]()
     @State var isLoaded: Bool = false
     @State var lastPlayedNote: MIDINoteNumber = 0
@@ -20,8 +20,10 @@ struct TouchPad: View {
     var osc: AKOscillatorBank
     let colors: [Color]  = [.red,.blue,.orange,.pink,.green,.yellow,.purple]
 
-    init(osc: AKOscillatorBank) {
+    init(osc: AKOscillatorBank, notes:Binding<[MIDINoteNumber]>, count: Int) {
         self.osc = osc
+        self._notes = notes
+
     }
 
     func playNote(at index: Int) {
@@ -31,6 +33,16 @@ struct TouchPad: View {
             osc.play(noteNumber: noteToPlay, velocity: 77)
             lastPlayedNote = noteToPlay
         }
+    }
+    func color(_ index: Int) -> Color {
+        if index == 0 {
+            return Color(red: Double(100 % 123),
+                         green: Double(100 % 234),
+                         blue: Double(100 % 789))
+        }
+        return Color(red: Double(index * index - 123),
+                     green: Double(index - index * 4),
+                     blue: Double(index + index * 3))
     }
 
     func stopAll() {
@@ -43,9 +55,11 @@ struct TouchPad: View {
     // initialize self.rects
     func initRects() {
         rects = notes.map { _ in CGRect() }
+        self.count = notes.count
         if rects.count == count {
             isLoaded = true
         }
+
     }
 
     var body: some View {
@@ -81,6 +95,6 @@ struct TouchPad: View {
 
 struct TouchPad_Previews: PreviewProvider {
     static var previews: some View {
-        TouchPad(osc: AKOscillatorBank())
+        TouchPad(osc: AKOscillatorBank(), notes: .constant([48,55,60,63,67,72,74]), count: 7)
     }
 }

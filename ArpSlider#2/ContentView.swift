@@ -11,9 +11,10 @@ import AudioKit
 
 
 struct ContentView: View {
-    @State var notes: [MIDINoteNumber] = [60,63,67,72,74]
+    @State var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74]
     @State var osc = AKOscillatorBank()
-
+    var mixer = AKMixer()
+    var delay = AKStereoDelay()
     init() {
         osc.waveform = AKTable(.sawtooth)
         osc.attackDuration = 0.0
@@ -21,7 +22,10 @@ struct ContentView: View {
         osc.sustainLevel = 0.1
         osc.releaseDuration = 0.1
 
-        AudioKit.output = osc
+        delay = AKStereoDelay(osc, maximumDelayTime: 5.0, time: 0.4, feedback: 0.2, dryWetMix: 0.7, pingPong: true)
+
+
+        AudioKit.output = delay
 
         do {
             try AudioKit.start()
@@ -33,15 +37,40 @@ struct ContentView: View {
 
     var body: some View {
         GeometryReader { g in
-            VStack {
-                TouchPad(osc: self.osc)
 
+            HStack {
+
+                TouchPad(osc: self.osc,
+                         notes: self.$notes, count: self.notes.count)
+
+                VStack {
+                Rectangle()
+                    .onTapGesture {
+                        self.notes = [49,56,61,64,68,73,75]
+                }
+
+                Rectangle()
+                    .onTapGesture {
+                        self.notes = [48,55,60,63,67,72,74]
+                }
+                }
+                VStack {
+                Rectangle()
+                    .onTapGesture {
+                        self.notes = [44,51,55,56,60,63,68]
+                }
+
+                Rectangle()
+                    .onTapGesture {
+                        self.notes = [41,53,55,56,63,67,68]
+                }
+                }
             }
-                .frame(width: g.size.width / 2,
-                       height: g.size.height / 2)
-
+            .frame(height: g.size.height / 2)
+            .padding(.horizontal,20)
                 .coordinateSpace(name: "mainV")
         }
+
     }
 }
 

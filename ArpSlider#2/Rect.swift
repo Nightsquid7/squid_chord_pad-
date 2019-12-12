@@ -20,7 +20,7 @@ struct Rect: View {
 
         return Rectangle()
                 .fill(color)
-                .frame(width: geometry.size.width - 20,
+                .frame(width: geometry.size.width,
                        height: geometry.size.height)
                 .cornerRadius(8)
                 .shadow(radius: 8)
