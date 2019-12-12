@@ -22,20 +22,17 @@ struct TouchPad: View {
 
     init(osc: AKOscillatorBank) {
         self.osc = osc
-
-        
     }
 
     func playNote(at index: Int) {
         let noteToPlay = notes[index]
         if lastPlayedNote != noteToPlay {
-            print("play \(noteToPlay)")
             osc.stop(noteNumber: lastPlayedNote)
             osc.play(noteNumber: noteToPlay, velocity: 77)
-
             lastPlayedNote = noteToPlay
         }
     }
+
     func stopAll() {
         (0...120).forEach {
             osc.stop(noteNumber: $0)
@@ -45,15 +42,15 @@ struct TouchPad: View {
 
     // initialize self.rects
     func initRects() {
-        rects = notes.map { _ in CGRect()}
+        rects = notes.map { _ in CGRect() }
         if rects.count == count {
             isLoaded = true
         }
     }
 
     var body: some View {
-        
-        return VStack {
+
+        return VStack(spacing: 0) {
             if self.isLoaded {
                 ForEach(0..<self.notes.count) { index in
                     Rect(rect: self.$rects[index],

@@ -35,7 +35,12 @@ struct ContentView: View {
         GeometryReader { g in
             VStack {
                 TouchPad(osc: self.osc)
+
             }
+                .frame(width: g.size.width / 2,
+                       height: g.size.height / 2)
+
+                .coordinateSpace(name: "mainV")
         }
     }
 }

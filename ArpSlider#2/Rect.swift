@@ -15,13 +15,13 @@ struct Rect: View {
 
     func getRect(_ geometry: GeometryProxy)  -> some View {
         DispatchQueue.main.async {
-            self.rect = geometry.frame(in: .global)
+            self.rect = geometry.frame(in: .named("mainV"))
     }
 
         return Rectangle()
                 .fill(color)
                 .frame(width: geometry.size.width - 20,
-                       height: geometry.size.height - 5)
+                       height: geometry.size.height)
                 .cornerRadius(8)
                 .shadow(radius: 8)
     }
