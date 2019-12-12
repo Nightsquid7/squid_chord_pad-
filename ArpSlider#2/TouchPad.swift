@@ -17,11 +17,13 @@ struct TouchPad: View {
     @State var isLoaded: Bool = false
     @State var lastPlayedNote: MIDINoteNumber = 0
     @State var xOffset: CGFloat = 0
-    @Binding var osc: AKOscillatorBank
+    var osc: AKOscillatorBank
     let colors: [Color]  = [.red,.blue,.orange,.pink,.green,.yellow,.purple]
 
-    init(osc: Binding<AKOscillatorBank>) {
-        self._osc = osc
+    init(osc: AKOscillatorBank) {
+        self.osc = osc
+
+        
     }
 
     func playNote(at index: Int) {
@@ -29,7 +31,8 @@ struct TouchPad: View {
         if lastPlayedNote != noteToPlay {
             print("play \(noteToPlay)")
             osc.stop(noteNumber: lastPlayedNote)
-            osc.play(noteNumber: noteToPlay, velocity: MIDIVelocity(xOffset))
+            osc.play(noteNumber: noteToPlay, velocity: 77)
+
             lastPlayedNote = noteToPlay
         }
     }
@@ -65,7 +68,6 @@ struct TouchPad: View {
                         for (index, rect) in self.rects.enumerated() {
                             if rect.contains(value.location) {
                                 self.playNote(at: index)
-
                             }
                         }
                 }
@@ -80,6 +82,6 @@ struct TouchPad: View {
 
 struct TouchPad_Previews: PreviewProvider {
     static var previews: some View {
-        TouchPad(osc: .constant(AKOscillatorBank()))
+        TouchPad(osc: AKOscillatorBank())
     }
 }

@@ -19,7 +19,7 @@ struct ContentView: View {
         osc.attackDuration = 0.0
         osc.decayDuration = 0.3
         osc.sustainLevel = 0.1
-        osc.releaseDuration = 0.7
+        osc.releaseDuration = 0.1
 
         AudioKit.output = osc
 
@@ -28,12 +28,13 @@ struct ContentView: View {
         } catch {
             print(error)
         }
+        
     }
 
     var body: some View {
         GeometryReader { g in
             VStack {
-                TouchPad(osc: self.$osc)
+                TouchPad(osc: self.osc)
             }
         }
     }
