@@ -27,9 +27,7 @@ struct Rect: View {
     }
     var body: some View {
         GeometryReader { g in
-
             self.getRect(g)
-
         } // geometry R
     }
 }
