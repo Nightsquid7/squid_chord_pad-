@@ -11,11 +11,12 @@ import AudioKit
 
 
 struct ContentView: View {
-    @State var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74]
+    @State var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74].reversed()
     @State var osc = AKOscillatorBank()
     var mixer = AKMixer()
     var delay = AKStereoDelay()
     init() {
+
         osc.waveform = AKTable(.sawtooth)
         osc.attackDuration = 0.0
         osc.decayDuration = 0.3
@@ -46,23 +47,23 @@ struct ContentView: View {
                 VStack {
                 Rectangle()
                     .onTapGesture {
-                        self.notes = [49,56,61,64,68,73,75]
+                        self.notes = [49,56,61,64,68,73,75].reversed()
                 }
 
                 Rectangle()
                     .onTapGesture {
-                        self.notes = [48,55,60,63,67,72,74]
+                        self.notes = [48,55,60,63,67,72,74].reversed()
                 }
                 }
                 VStack {
                 Rectangle()
                     .onTapGesture {
-                        self.notes = [44,51,55,56,60,63,68]
+                        self.notes = [44,51,55,56,60,63,68].reversed()
                 }
 
                 Rectangle()
                     .onTapGesture {
-                        self.notes = [41,53,55,56,63,67,68]
+                        self.notes = [41,53,55,56,63,67,68].reversed()
                 }
                 }
             }
