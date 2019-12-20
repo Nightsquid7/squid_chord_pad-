@@ -12,10 +12,15 @@ import AudioKit
 
 struct ContentView: View {
     @State var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74].reversed()
+    @State var notes2: [MIDINoteNumber] = [51,58,63,70,74,75,77].reversed()
+    @State var notes3: [MIDINoteNumber] = [44,51,55,56,60,63,68].reversed()
+    @State var notes4: [MIDINoteNumber] = [41,53,55,56,63,67,67].reversed()
+
     @State var osc = AKOscillatorBank()
     var mixer = AKMixer()
     var delay = AKStereoDelay()
     init() {
+
 
         osc.waveform = AKTable(.sawtooth)
         osc.attackDuration = 0.0
@@ -38,38 +43,37 @@ struct ContentView: View {
 
     var body: some View {
         GeometryReader { g in
-
+            VStack {
             HStack {
+
 
                 TouchPad(osc: self.osc,
                          notes: self.$notes, count: self.notes.count)
-
-                VStack {
-                Rectangle()
-                    .onTapGesture {
-                        self.notes = [49,56,61,64,68,73,75].reversed()
-                }
-
-                Rectangle()
-                    .onTapGesture {
-                        self.notes = [48,55,60,63,67,72,74].reversed()
-                }
-                }
-                VStack {
-                Rectangle()
-                    .onTapGesture {
-                        self.notes = [44,51,55,56,60,63,68].reversed()
-                }
-
-                Rectangle()
-                    .onTapGesture {
-                        self.notes = [41,53,55,56,63,67,68].reversed()
-                }
-                }
-            }
-            .frame(height: g.size.height / 2)
-            .padding(.horizontal,20)
+                    .coordinateSpace(name: "mainV")
+                TouchPad(osc: self.osc,
+                         notes: self.$notes2, count: self.notes2.count)
                 .coordinateSpace(name: "mainV")
+
+                TouchPad(osc: self.osc,
+                        notes: self.$notes3, count: self.notes3.count)
+                .coordinateSpace(name: "mainV")
+
+                TouchPad(osc: self.osc,
+                         notes: self.$notes4, count: self.notes4.count)
+                .coordinateSpace(name: "mainV")
+
+
+            }
+                .frame(height: g.size.height / 2)
+                .padding(.horizontal,20)
+
+                ADSRView(attack: self.$osc.attackDuration,
+                         decay: self.$osc.decayDuration,
+                         sustain: self.$osc.sustainLevel,
+                         release: self.$osc.releaseDuration)
+                .frame(height: g.size.height / 2)
+                .padding(.horizontal,20)
+            }
         }
 
     }

@@ -18,6 +18,8 @@
 		532745F723A1FF5E00F1A458 /* ArpSlider_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532745F623A1FF5E00F1A458 /* ArpSlider_2UITests.swift */; };
 		5327460523A2001400F1A458 /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5327460423A2001300F1A458 /* Rect.swift */; };
 		5327460723A2002000F1A458 /* TouchPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5327460623A2002000F1A458 /* TouchPad.swift */; };
+		5349C5B123A472230052B716 /* ADSRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349C5B023A472230052B716 /* ADSRView.swift */; };
+		5349C5B323A474780052B716 /* PotentiometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349C5B223A474780052B716 /* PotentiometerView.swift */; };
 		688EB26AA526D5D376E1941E /* Pods_ArpSlider_2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA54E193F22A7FAD0497383B /* Pods_ArpSlider_2Tests.framework */; };
 		FBDA16B88217F77365785329 /* Pods_ArpSlider_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A777DEB7BBE4D73A5F62812 /* Pods_ArpSlider_2.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		532745F823A1FF5E00F1A458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5327460423A2001300F1A458 /* Rect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
 		5327460623A2002000F1A458 /* TouchPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPad.swift; sourceTree = "<group>"; };
+		5349C5B023A472230052B716 /* ADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSRView.swift; sourceTree = "<group>"; };
+		5349C5B223A474780052B716 /* PotentiometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentiometerView.swift; sourceTree = "<group>"; };
 		62AC8344B76EFFE7460F39F4 /* Pods-ArpSlider#2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArpSlider#2.debug.xcconfig"; path = "Target Support Files/Pods-ArpSlider#2/Pods-ArpSlider#2.debug.xcconfig"; sourceTree = "<group>"; };
 		72BD0208E65FA684EA612B4B /* Pods-ArpSlider#2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArpSlider#2UITests.debug.xcconfig"; path = "Target Support Files/Pods-ArpSlider#2UITests/Pods-ArpSlider#2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96DB11B538413F5ABBB3819C /* Pods-ArpSlider#2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArpSlider#2UITests.release.xcconfig"; path = "Target Support Files/Pods-ArpSlider#2UITests/Pods-ArpSlider#2UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +109,6 @@
 				72BD0208E65FA684EA612B4B /* Pods-ArpSlider#2UITests.debug.xcconfig */,
 				96DB11B538413F5ABBB3819C /* Pods-ArpSlider#2UITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -137,6 +140,8 @@
 				532745D423A1FF5D00F1A458 /* AppDelegate.swift */,
 				532745D623A1FF5D00F1A458 /* SceneDelegate.swift */,
 				532745D823A1FF5D00F1A458 /* ContentView.swift */,
+				5349C5B023A472230052B716 /* ADSRView.swift */,
+				5349C5B223A474780052B716 /* PotentiometerView.swift */,
 				5327460623A2002000F1A458 /* TouchPad.swift */,
 				5327460423A2001300F1A458 /* Rect.swift */,
 				532745DA23A1FF5E00F1A458 /* Assets.xcassets */,
@@ -388,8 +393,10 @@
 			files = (
 				532745D523A1FF5D00F1A458 /* AppDelegate.swift in Sources */,
 				532745D723A1FF5D00F1A458 /* SceneDelegate.swift in Sources */,
+				5349C5B123A472230052B716 /* ADSRView.swift in Sources */,
 				532745D923A1FF5D00F1A458 /* ContentView.swift in Sources */,
 				5327460723A2002000F1A458 /* TouchPad.swift in Sources */,
+				5349C5B323A474780052B716 /* PotentiometerView.swift in Sources */,
 				5327460523A2001400F1A458 /* Rect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
