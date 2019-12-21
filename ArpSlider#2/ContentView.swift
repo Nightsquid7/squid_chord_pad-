@@ -64,7 +64,7 @@ struct ContentView: View {
 
 
             }
-                .frame(height: g.size.height / 2)
+                .frame(height: g.size.height / 4)
                 .padding(.horizontal,20)
 
                 ADSRView(attack: self.$osc.attackDuration,

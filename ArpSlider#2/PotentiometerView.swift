@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct PotentiometerView: View {
+struct Potentiometer: View {
 
     @State var angle = Angle(degrees: -67)
 
@@ -33,9 +33,9 @@ struct PotentiometerView: View {
 
             if degrees > minimumDegrees && degrees < maximumDegrees {
                 self.angle = Angle(degrees: degrees)
-//                print("degrees: \(degrees)")
-//                print(((angle.degrees - minimumDegrees) * (maximumValue - minimumValue) / (maximumDegrees - minimumDegrees)) + adjustedTranslationHeight)
-                self.value = degrees / 4
+
+                self.value = degrees/4 //max(minimumValue, min(degrees / 4, maximumValue))
+                print(value)
            }
 
         }
@@ -64,8 +64,8 @@ struct PotentiometerView: View {
         }
 }
 
-struct PotentiometerView_Previews: PreviewProvider {
+struct Potentiometer_Previews: PreviewProvider {
     static var previews: some View {
-        PotentiometerView(minDegrees: -67, binding: .constant(68))
+        Potentiometer(minDegrees: -67, binding: .constant(68))
     }
 }
