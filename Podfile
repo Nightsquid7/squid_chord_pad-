@@ -7,6 +7,7 @@ target 'ArpSlider#2' do
 
   # Pods for ArpSlider#2
   pod 'AudioKit', '4.9'
+  pod 'SwiftLint'
 
   target 'ArpSlider#2Tests' do
     inherit! :search_paths

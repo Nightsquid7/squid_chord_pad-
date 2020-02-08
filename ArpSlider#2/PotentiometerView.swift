@@ -38,6 +38,7 @@ struct Potentiometer: View {
         }
 
         var body: some View {
+            // swiftlint:disable identifier_name
             GeometryReader { g in
 
                 ZStack {

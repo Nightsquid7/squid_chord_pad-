@@ -46,11 +46,11 @@ struct TouchPad: View {
     // color testing
     func color(_ index: Int, noteNumber: MIDINoteNumber)  -> Color {
         let mod = Double(noteNumber % 12) * 0.1
-        var i = Double(index)
-        if i == 0 { i = 0.9 }
-        let red = i * 0.1
-        let green = i * 0.02 + mod
-        let blue = i - red
+        var colorIndex = Double(index)
+        if colorIndex == 0 { colorIndex = 0.9 }
+        let red = colorIndex * 0.1
+        let green = colorIndex * 0.02 + mod
+        let blue = colorIndex - red
         return Color(red: red, green: green, blue: blue)
     }
     // initialize self.rects
