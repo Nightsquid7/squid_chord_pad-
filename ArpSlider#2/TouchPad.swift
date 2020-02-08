@@ -44,7 +44,6 @@ struct TouchPad: View {
                     .onChanged { value in
                         for (index, rect) in self.rects.enumerated() {
                             if rect.contains(value.location) {
-                                print(index)
                                 self.currentIndex = index
                                 NotificationCenter.default.post(name: Notification.Name("note on"), object: index)
                             }

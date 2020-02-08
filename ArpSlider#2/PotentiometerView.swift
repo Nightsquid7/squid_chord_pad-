@@ -12,17 +12,15 @@ struct Potentiometer: View {
 
     @State var angle = Angle(degrees: -67)
 
-     init(minDegrees: Double, binding: Binding<Double>) {
-            self._value = binding
-            self.minimumDegrees = minDegrees
-            self.angle.degrees = minDegrees
-    }
+     init(value: Binding<Double>) {
+            self._value = value
+     }
 
         @Binding var value: Double
 
         let minimumValue: Double = 0
         let maximumValue:Double = 1
-        let minimumDegrees: Double
+        let minimumDegrees: Double = -67
         let maximumDegrees: Double = 250
         let touchSensitivity:Double = 8
 
@@ -33,7 +31,7 @@ struct Potentiometer: View {
             if degrees > minimumDegrees && degrees < maximumDegrees {
                 self.angle = Angle(degrees: degrees)
                 self.value = degrees/4 //max(minimumValue, min(degrees / 4, maximumValue))
-                print(value)
+                
            }
         }
 
@@ -47,7 +45,7 @@ struct Potentiometer: View {
                     .fill(Color.black)
                     Capsule()
                         .fill(Color.white)
-                        .frame(width: g.size.width/2, height: g.size.width/4)
+                        .frame(width: g.size.width/2, height: g.size.width/5)
                         .offset(x: -g.size.width/4)
                         .rotationEffect(self.angle)
                 }// ZStack
@@ -63,6 +61,6 @@ struct Potentiometer: View {
 
 struct Potentiometer_Previews: PreviewProvider {
     static var previews: some View {
-        Potentiometer(minDegrees: -67, binding: .constant(68))
+        Potentiometer(value: .constant(68))
     }
 }

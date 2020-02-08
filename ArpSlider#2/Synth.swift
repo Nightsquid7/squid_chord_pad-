@@ -9,7 +9,12 @@
 import AudioKit
 import Combine
 
-class Synth {
+class Synth: ObservableObject {
+
+    @Published var attack: Double = 0
+    @Published var decay: Double = 0
+    @Published var sustain: Double = 0
+    @Published var release: Double = 0
 
     var osc1 = AKOscillatorBank()
     var osc2 = AKOscillatorBank()
@@ -36,15 +41,39 @@ class Synth {
         osc2.pitchBend = 12
         osc2.waveform = AKTable(.square)
 
-        osc1.attackDuration = 0.0
-        osc1.decayDuration = 0.3
-        osc1.sustainLevel = 0.1
-        osc1.releaseDuration = 0.1
+        osc3.pitchBend = -12
+        osc3.waveform = AKTable(.reverseSawtooth)
+
+        setAttack(0.0)
+        setDecay(0.3)
+        setSustain(0.1)
+        setRelease(0.1)
 
         oscMixer = AKMixer(osc1, osc2, osc3)
         delay = AKStereoDelay(oscMixer, maximumDelayTime: 5.0, time: 0.4, feedback: 0.2, dryWetMix: 0.7, pingPong: true)
         outputMixer = AKMixer(delay, oscMixer)
         setListeners()
+    }
+
+    func setAttack(_ newValue: Double) {
+        oscillators.forEach { osc in
+            osc.attackDuration = newValue
+        }
+    }
+    func setDecay(_ newValue: Double) {
+        oscillators.forEach { osc in
+            osc.decayDuration = newValue
+        }
+    }
+    func setSustain(_ newValue: Double) {
+        oscillators.forEach { osc in
+            osc.sustainLevel = newValue
+        }
+    }
+    func setRelease(_ newValue: Double) {
+        oscillators.forEach { osc in
+            osc.releaseDuration = newValue
+        }
     }
 
     // play a note received from the touchpad
@@ -59,8 +88,8 @@ class Synth {
             self.oscillators.forEach { osc in
                 osc.stop(noteNumber: lastPlayedNote)
                 osc.play(noteNumber: noteToPlay, velocity: 77)
-                lastPlayedNote = noteToPlay
             }
+            lastPlayedNote = noteToPlay
         }
     }
 

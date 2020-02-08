@@ -11,7 +11,6 @@ import AudioKit
 
 struct ContentView: View {
 
-    @State var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74].reversed()
     @State var synth = Synth()
 
     init() {
@@ -32,16 +31,17 @@ struct ContentView: View {
             VStack {
                 HStack {
 
-                    TouchPad(count: self.notes.count)
+                    TouchPad(count: 7)
                             .coordinateSpace(name: "mainV")
                 }
                             .frame(height: g.size.height/4)
 
-//                ADSRView(attack: self.$synth.osc.attackDuration,
-//                         decay: self.$synth.osc.decayDuration,
-//                         sustain: self.$synth.osc.sustainLevel,
-//                         release: self.$synth.osc.releaseDuration)
-//                        .frame(height: g.size.height/4)
+                ADSRView(attack: self.$synth.attack,
+                         decay: self.$synth.decay,
+                         sustain: self.$synth.sustain,
+                         release: self.$synth.release,
+                         synth: self.$synth)
+                        .frame(height: g.size.height/4)
             }
                     .padding(.horizontal,20)
         }
