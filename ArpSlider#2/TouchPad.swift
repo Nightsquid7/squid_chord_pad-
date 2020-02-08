@@ -10,7 +10,6 @@ import SwiftUI
 import AudioKit
 struct TouchPad: View {
 
-
     @Binding var notes: [MIDINoteNumber]//  = [48,55,60,63,67,72,74]
     @State var count: Int = 0
     @State var rects = [CGRect]()
@@ -44,7 +43,7 @@ struct TouchPad: View {
         lastPlayedNote = 0
     }
     // color testing
-    func color(_ index: Int, noteNumber: MIDINoteNumber)  -> Color {
+    func color(_ index: Int, noteNumber: MIDINoteNumber) -> Color {
         let mod = Double(noteNumber % 12) * 0.1
         var colorIndex = Double(index)
         if colorIndex == 0 { colorIndex = 0.9 }
@@ -79,7 +78,7 @@ struct TouchPad: View {
             }
             .gesture(
                 DragGesture(minimumDistance: 0)
-                    .onChanged{ value in
+                    .onChanged { value in
                         for (index, rect) in self.rects.enumerated() {
                             if rect.contains(value.location) {
                                 print(index)
@@ -88,7 +87,7 @@ struct TouchPad: View {
                             }
                         }
                 }
-                .onEnded { value in
+                .onEnded { _ in
                     self.stopAll()
                     self.currentIndex = -1
                 }

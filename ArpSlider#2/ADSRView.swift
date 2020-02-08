@@ -16,8 +16,6 @@ struct ADSRView: View {
     @Binding var sustain: Double
     @Binding var release: Double
 
-    
-
     var body: some View {
         VStack {
 
@@ -26,7 +24,6 @@ struct ADSRView: View {
                              sustain: self.$sustain,
                              release: self.$release)
                  .stroke(Color.black, lineWidth: 7)
-
 
             HStack {
                 Potentiometer(minDegrees: -67, binding: self.$attack)

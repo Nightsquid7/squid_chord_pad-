@@ -9,7 +9,6 @@
 import SwiftUI
 import AudioKit
 
-
 struct ContentView: View {
     @State var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74].reversed()
     @State var notes2: [MIDINoteNumber] = [51,58,63,70,74,75,77].reversed()
@@ -21,7 +20,6 @@ struct ContentView: View {
     var delay = AKStereoDelay()
     init() {
 
-
         osc.waveform = AKTable(.sawtooth)
         osc.attackDuration = 0.0
         osc.decayDuration = 0.3
@@ -30,7 +28,6 @@ struct ContentView: View {
 
         delay = AKStereoDelay(osc, maximumDelayTime: 5.0, time: 0.4, feedback: 0.2, dryWetMix: 0.7, pingPong: true)
 
-
         AudioKit.output = delay
 
         do {
@@ -38,7 +35,7 @@ struct ContentView: View {
         } catch {
             print(error)
         }
-        
+
     }
 
     var body: some View {
@@ -46,7 +43,6 @@ struct ContentView: View {
         GeometryReader { g in
             VStack {
             HStack {
-
 
                 TouchPad(osc: self.osc,
                          notes: self.$notes, count: self.notes.count)
@@ -62,7 +58,6 @@ struct ContentView: View {
                 TouchPad(osc: self.osc,
                          notes: self.$notes4, count: self.notes4.count)
                 .coordinateSpace(name: "mainV")
-
 
             }
                 .frame(height: g.size.height / 4)

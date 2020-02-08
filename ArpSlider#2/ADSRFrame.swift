@@ -10,12 +10,10 @@ import SwiftUI
 
 struct ADSREnvelopeView: Shape {
 
-
     @Binding var attack: Double
     @Binding var decay: Double
     @Binding var sustain: Double
     @Binding var release: Double
-    
 
     func path(in rect: CGRect) -> Path {
         // CGFloats
@@ -28,10 +26,10 @@ struct ADSREnvelopeView: Shape {
         let attackXConstant = minX + rect.size.width/8
         let sustainXConstant = maxX - rect.size.width/8
         // non-constants
-        var attackXOffset: CGFloat = attackXConstant - CGFloat(attack)
-        var sustainYLevel: CGFloat = minY + CGFloat(sustain)
-        var decayYOffset: CGFloat = attackXConstant + CGFloat(decay)
-        var releaseXOffset: CGFloat = sustainXConstant - CGFloat(release)
+        var _: CGFloat = attackXConstant - CGFloat(attack)
+        let sustainYLevel: CGFloat = minY + CGFloat(sustain)
+        let decayYOffset: CGFloat = attackXConstant + CGFloat(decay)
+        let releaseXOffset: CGFloat = sustainXConstant - CGFloat(release)
         // CGPoints
         let attackStart = CGPoint(x: attackXConstant, y: minY)
         let attackStop = CGPoint(x: attackXConstant, y: maxY)

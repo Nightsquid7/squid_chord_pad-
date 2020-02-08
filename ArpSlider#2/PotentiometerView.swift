@@ -19,7 +19,7 @@ struct Potentiometer: View {
     }
 
         @Binding var value: Double
-      
+
         let minimumValue: Double = 0
         let maximumValue:Double = 1
         let minimumDegrees: Double
@@ -27,7 +27,7 @@ struct Potentiometer: View {
         let touchSensitivity:Double = 8
 
         func setAngleDegrees(from translationHeight:CGFloat) {
-            let adjustedTranslationHeight = (-Double(translationHeight) / touchSensitivity)
+            let adjustedTranslationHeight = (-Double(translationHeight)/touchSensitivity)
             let degrees: Double = angle.degrees + adjustedTranslationHeight
 
             if degrees > minimumDegrees && degrees < maximumDegrees {
@@ -48,7 +48,7 @@ struct Potentiometer: View {
                     Capsule()
                         .fill(Color.white)
                         .frame(width: g.size.width/2, height: g.size.width/4)
-                        .offset(x: -g.size.width / 4)
+                        .offset(x: -g.size.width/4)
                         .rotationEffect(self.angle)
                 }// ZStack
                     .gesture(

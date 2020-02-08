@@ -7,7 +7,7 @@
 //
 
 import XCTest
-// swiftlint:disable type_name
+// swiftlint:disable type_name line_length
 class ArpSlider_2UITests: XCTestCase {
 
     override func setUp() {
