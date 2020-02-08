@@ -12,14 +12,13 @@ struct Potentiometer: View {
 
     @State var angle = Angle(degrees: -67)
 
-    init(minDegrees: Double, binding: Binding<Double>) {
+     init(minDegrees: Double, binding: Binding<Double>) {
             self._value = binding
             self.minimumDegrees = minDegrees
             self.angle.degrees = minDegrees
     }
-        // want to get value
-//         @Binding var value: CGFloat
-             @Binding var value: Double
+
+        @Binding var value: Double
       
         let minimumValue: Double = 0
         let maximumValue:Double = 1
@@ -33,11 +32,9 @@ struct Potentiometer: View {
 
             if degrees > minimumDegrees && degrees < maximumDegrees {
                 self.angle = Angle(degrees: degrees)
-
                 self.value = degrees/4 //max(minimumValue, min(degrees / 4, maximumValue))
                 print(value)
            }
-
         }
 
         var body: some View {
@@ -49,7 +46,7 @@ struct Potentiometer: View {
                     .fill(Color.black)
                     Capsule()
                         .fill(Color.white)
-                        .frame(width: g.size.width / 2, height: 30)
+                        .frame(width: g.size.width/2, height: g.size.width/4)
                         .offset(x: -g.size.width / 4)
                         .rotationEffect(self.angle)
                 }// ZStack
@@ -58,7 +55,6 @@ struct Potentiometer: View {
                             .onChanged { value in
                                 self.setAngleDegrees(from: value.translation.height)
                         }
-
                 )
             } //GeometryReader {
         }

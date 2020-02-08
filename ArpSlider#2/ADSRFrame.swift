@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ADSRFrame: Shape {
+struct ADSREnvelopeView: Shape {
 
 
     @Binding var attack: Double
@@ -28,12 +28,12 @@ struct ADSRFrame: Shape {
         let attackXConstant = minX + rect.size.width/8
         let sustainXConstant = maxX - rect.size.width/8
         // non-constants
-        var attackXOffset: CGFloat = attackXConstant - CGFloat(attack * 100)
+        var attackXOffset: CGFloat = attackXConstant - CGFloat(attack)
         var sustainYLevel: CGFloat = minY + CGFloat(sustain)
         var decayYOffset: CGFloat = attackXConstant + CGFloat(decay)
         var releaseXOffset: CGFloat = sustainXConstant - CGFloat(release)
         // CGPoints
-        let attackStart = CGPoint(x: attackXConstant - CGFloat(attack * 100), y: minY)
+        let attackStart = CGPoint(x: attackXConstant, y: minY)
         let attackStop = CGPoint(x: attackXConstant, y: maxY)
         let decayEnd = CGPoint(x: decayYOffset, y: sustainYLevel)
         let sustainEnd = CGPoint(x: sustainXConstant, y:sustainYLevel)
@@ -49,8 +49,60 @@ struct ADSRFrame: Shape {
     }
 }
 
+//extension ADSRFrame : VectorArithmetic {
+//    static func -= (lhs: inout ADSRFrame, rhs: ADSRFrame) {
+//
+//    }
+//
+//    static func - (lhs: ADSRFrame, rhs: ADSRFrame) -> ADSRFrame {
+//        var newAttack = lhs.attack - rhs.attack
+//        var newDecay = lhs.decay - rhs.decay
+//        var newSustain  = lhs.sustain - rhs.sustain
+//        var newRelease = lhs.release - rhs.release
+//        return ADSRFrame(attack: newAttack, decay: newDecay, sustain: newSustain, release: newRelease)
+//    }
+//
+//
+//    static func += (lhs: inout ADSRFrame, rhs: ADSRFrame) {
+//
+//    }
+//
+//    static func + (lhs: ADSRFrame, rhs: ADSRFrame) -> ADSRFrame {
+//        var newAttack = lhs.attack + rhs.attack
+//        var newDecay = lhs.decay + rhs.decay
+//        var newSustain  = lhs.sustain + rhs.sustain
+//        var newRelease = lhs.release + rhs.release
+//        return ADSRFrame(attack: newAttack, decay: newDecay, sustain: newSustain, release: newRelease)
+//
+//    }
+//
+//    init(attack:Double, decay: Double, sustain: Double, release: Double) {
+//        self.attack = attack
+//        self.decay = decay
+//        self.sustain = sustain
+//        self.release = release
+//    }
+//    mutating func scale(by rhs: Double) {
+//
+//    }
+//
+//    var magnitudeSquared: Double {
+//        return 1
+//    }
+//
+//    static var zero: ADSRFrame {
+//        return ADSRFrame(attack: 0, decay: 0, sustain: 0, release: 0)
+//    }
+//
+//    static func == (lhs: ADSRFrame, rhs: ADSRFrame) -> Bool {
+//        return true
+//    }
+//
+//
+//}
+
 struct ADSRFrame_Previews: PreviewProvider {
     static var previews: some View {
-        ADSRFrame(attack: .constant(1), decay: .constant(40), sustain: .constant(-10), release: .constant(-30))
+        ADSREnvelopeView(attack: .constant(10), decay: .constant(40), sustain: .constant(-20), release: .constant(-30))
     }
 }

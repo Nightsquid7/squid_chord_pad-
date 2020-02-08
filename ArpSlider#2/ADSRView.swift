@@ -21,11 +21,12 @@ struct ADSRView: View {
     var body: some View {
         VStack {
 
-            ADSRFrame(attack: self.$attack,
-                      decay: self.$decay,
-                      sustain: self.$sustain,
-                      release: self.$release)
+            ADSREnvelopeView(attack: self.$attack,
+                             decay: self.$decay,
+                             sustain: self.$sustain,
+                             release: self.$release)
                  .stroke(Color.black, lineWidth: 7)
+
 
             HStack {
                 Potentiometer(minDegrees: -67, binding: self.$attack)

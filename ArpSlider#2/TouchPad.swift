@@ -24,7 +24,6 @@ struct TouchPad: View {
     init(osc: AKOscillatorBank, notes:Binding<[MIDINoteNumber]>, count: Int) {
         self.osc = osc
         self._notes = notes
-
     }
 
     // only play a new note if it is different from the last note
