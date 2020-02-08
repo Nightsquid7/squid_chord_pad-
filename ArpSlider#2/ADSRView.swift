@@ -17,13 +17,10 @@ struct ADSRView: View {
     @Binding var release: Double
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
 
-            ADSREnvelopeView(attack: self.$attack,
-                             decay: self.$decay,
-                             sustain: self.$sustain,
-                             release: self.$release)
-                 .stroke(Color.black, lineWidth: 7)
+
+            Text("ADSR")
 
             HStack {
                 Potentiometer(minDegrees: -67, binding: self.$attack)

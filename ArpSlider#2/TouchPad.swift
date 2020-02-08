@@ -8,6 +8,7 @@
 
 import SwiftUI
 import AudioKit
+
 struct TouchPad: View {
 
     @Binding var notes: [MIDINoteNumber]//  = [48,55,60,63,67,72,74]
@@ -25,9 +26,10 @@ struct TouchPad: View {
         self._notes = notes
     }
 
-    // only play a new note if it is different from the last note
+    //
     func playNote(at index: Int) {
         let noteToPlay = notes[index]
+        // only play a new note if it is different from the last note
         if lastPlayedNote != noteToPlay {
             osc.stop(noteNumber: lastPlayedNote)
             osc.play(noteNumber: noteToPlay, velocity: 77)
