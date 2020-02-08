@@ -16,7 +16,7 @@ struct ContentView: View {
 
     init() {
 
-        AudioKit.output = synth.delay
+        AudioKit.output = synth.outputMixer
 
         do {
             try AudioKit.start()
@@ -32,17 +32,16 @@ struct ContentView: View {
             VStack {
                 HStack {
 
-                    TouchPad(osc: self.synth.osc,
-                             notes: self.$notes, count: self.notes.count)
+                    TouchPad(count: self.notes.count)
                             .coordinateSpace(name: "mainV")
                 }
                             .frame(height: g.size.height/4)
 
-                ADSRView(attack: self.$synth.osc.attackDuration,
-                         decay: self.$synth.osc.decayDuration,
-                         sustain: self.$synth.osc.sustainLevel,
-                         release: self.$synth.osc.releaseDuration)
-                        .frame(height: g.size.height/4)
+//                ADSRView(attack: self.$synth.osc.attackDuration,
+//                         decay: self.$synth.osc.decayDuration,
+//                         sustain: self.$synth.osc.sustainLevel,
+//                         release: self.$synth.osc.releaseDuration)
+//                        .frame(height: g.size.height/4)
             }
                     .padding(.horizontal,20)
         }

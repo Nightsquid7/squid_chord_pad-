@@ -19,7 +19,6 @@ struct ADSRView: View {
     var body: some View {
         VStack(alignment: .leading) {
 
-
             Text("ADSR")
 
             HStack {
