@@ -11,10 +11,10 @@ import Combine
 
 class Synth: ObservableObject {
 
-    @Published var attack: Double = 0
-    @Published var decay: Double = 0
-    @Published var sustain: Double = 0
-    @Published var release: Double = 0
+    @Published var attack: Double = 0.0
+    @Published var decay: Double = 0.3
+    @Published var sustain: Double = 0.1
+    @Published var release: Double = 0.1
 
     var osc1 = AKOscillatorBank()
     var osc2 = AKOscillatorBank()

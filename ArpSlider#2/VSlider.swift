@@ -34,13 +34,13 @@ struct VSlider: View {
                 .gesture (
                     DragGesture()
                         .onChanged { value in
-                            let newValue = value.translation.height
-                            print("newValue: \(newValue)")
-                            if newValue > self.min && newValue < self.max {
-                                self.value = Double(newValue)
-                                print("self.value: \(self.value)")
-                                self.yOffset = newValue
+                            let dragHeight = value.translation.height
+                            print("dragHeight: \(dragHeight)")
+                            if dragHeight > self.min && dragHeight < self.max {
+                                self.value = -Double(dragHeight)
+                                print("\tself.value: \(self.value)")
                             }
+
                     }
 //                    .onEnded { value in
 //

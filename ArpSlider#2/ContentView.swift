@@ -28,22 +28,21 @@ struct ContentView: View {
     var body: some View {
         // swiftlint:disable identifier_name
         GeometryReader { g in
-            VStack {
-                HStack {
+                VStack {
+                    HStack {
 
-                    TouchPad(count: 7)
+                        TouchPad(count: 7)
                             .coordinateSpace(name: "mainV")
-                }
-                            .frame(height: g.size.height/4)
-
-                ADSRView(attack: self.$synth.attack,
-                         decay: self.$synth.decay,
-                         sustain: self.$synth.sustain,
-                         release: self.$synth.release,
-                         synth: self.$synth)
+                    }
                         .frame(height: g.size.height/4)
+
+
+                    TempADSRView(synth: self.$synth)
+                        .frame(width: g.size.width, height: g.size.height/4)
+
+
+                .padding(.horizontal,20)
             }
-                    .padding(.horizontal,20)
         }
 
     }

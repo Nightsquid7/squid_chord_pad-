@@ -31,7 +31,7 @@ struct Potentiometer: View {
             if degrees > minimumDegrees && degrees < maximumDegrees {
                 self.angle = Angle(degrees: degrees)
                 self.value = degrees/4 //max(minimumValue, min(degrees / 4, maximumValue))
-                
+            
            }
         }
 
