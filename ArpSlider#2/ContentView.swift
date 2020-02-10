@@ -12,7 +12,11 @@ import AudioKit
 struct ContentView: View {
 
     @State var synth = Synth()
-    @State var currentChord = 0
+
+    @State var showingADSR: Bool = false
+    @State var showingDelay: Bool = false
+    @State var showingFilter: Bool = false
+    @State var showingOscParameters: Bool = false
 
     init() {
 
@@ -42,13 +46,14 @@ struct ContentView: View {
 
                     ScrollView {
 
-                        TempADSRView(synth: self.$synth)
+                        TempADSRView(synth: self.$synth, isVisible: self.$showingADSR)
                             .frame(width: g.size.width, height: g.size.height/4)
 
-                        DelayView(synth: self.$synth)
+                        DelayView(synth: self.$synth, isVisible: self.$showingDelay)
 
-                        FilterView(synth: self.$synth)
-                        OscParameterView(synth: self.$synth)
+                        FilterView(synth: self.$synth, isVisible: self.$showingFilter)
+                        
+                        OscParameterView(synth: self.$synth, isVisible: self.$showingOscParameters)
 
                     }
                     .padding(.horizontal,20)

@@ -12,7 +12,7 @@ struct DelayView: View {
 
     @EnvironmentObject var parameters: Parameters
     @Binding var synth: Synth
-    @State var isVisible: Bool = false
+    @Binding var isVisible: Bool
 
     var body: some View {
         VStack {
@@ -47,6 +47,6 @@ struct DelayView: View {
 
 struct DelayView_Previews: PreviewProvider {
     static var previews: some View {
-        DelayView(synth: .constant(Synth()))
+        DelayView(synth: .constant(Synth()), isVisible: .constant(true))
     }
 }

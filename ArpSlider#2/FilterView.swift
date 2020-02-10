@@ -12,17 +12,21 @@ struct FilterView: View {
 
     @EnvironmentObject var parameters: Parameters
     @Binding var synth: Synth
-    @State var isVisible: Bool = false
+    @Binding var isVisible: Bool
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
 
-            Text("Cutoff Frequency")
-            
-            Slider(value: $parameters.cutoff, in: 0...20_000)
-                .onReceive(parameters.$cutoff, perform: { cutoff in
-                    self.synth.filter.cutoffFrequency = cutoff
-                })
+            Toggle(isOn: self.$isVisible, label: {
+                Text("Cutoff Frequency")
+            })
+
+            if isVisible {
+                Slider(value: $parameters.cutoff, in: 0...20_000)
+                    .onReceive(parameters.$cutoff, perform: { cutoff in
+                        self.synth.filter.cutoffFrequency = cutoff
+                    })
+            }
         }
     }
 }

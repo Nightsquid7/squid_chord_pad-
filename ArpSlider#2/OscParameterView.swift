@@ -13,37 +13,47 @@ struct OscParameterView: View {
 
     @EnvironmentObject var parameters: Parameters
     @Binding var synth: Synth
-    @State var waveform = AKTable(.sine)
+    @Binding var isVisible: Bool
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Oscillator 1")
-            Picker(selection: $parameters.waveform1, label: EmptyView(), content: {
-                Text("Square").tag(AKTable(.square))
-                Text("Sine").tag(AKTable(.sine))
-                Text("Sawtooth").tag(AKTable(.sawtooth))
-            }).pickerStyle(SegmentedPickerStyle())
-                .onReceive(parameters.$waveform1, perform: { waveform in
-                    self.synth.osc1.waveform = waveform
-                })
-            Text("Oscillator 2")
-            Picker(selection: $parameters.waveform2, label: EmptyView(), content: {
-                Text("Square").tag(AKTable(.square))
-                Text("Sine").tag(AKTable(.sine))
-                Text("Sawtooth").tag(AKTable(.sawtooth))
-            }).pickerStyle(SegmentedPickerStyle())
-                .onReceive(parameters.$waveform2, perform: { waveform in
-                    self.synth.osc2.waveform = waveform
-                })
-            Text("Oscillator 2")
-            Picker(selection: $parameters.waveform3, label: EmptyView(), content: {
-                Text("Square").tag(AKTable(.square))
-                Text("Sine").tag(AKTable(.sine))
-                Text("Sawtooth").tag(AKTable(.sawtooth))
-            }).pickerStyle(SegmentedPickerStyle())
-                .onReceive(parameters.$waveform3, perform: { waveform in
-                    self.synth.osc3.waveform = waveform
-                })
+        VStack {
+            Toggle(isOn: self.$isVisible, label: {
+                Text("Oscillators")
+
+            })
+
+            if isVisible {
+                VStack(alignment: .leading) {
+                    Text("Oscillator 1")
+                    Picker(selection: $parameters.waveform1, label: EmptyView(), content: {
+                        Text("Square").tag(AKTable(.square))
+                        Text("Sine").tag(AKTable(.sine))
+                        Text("Sawtooth").tag(AKTable(.sawtooth))
+                    }).pickerStyle(SegmentedPickerStyle())
+                        .onReceive(parameters.$waveform1, perform: { waveform in
+                            self.synth.osc1.waveform = waveform
+                        })
+                    Text("Oscillator 2")
+                    Picker(selection: $parameters.waveform2, label: EmptyView(), content: {
+                        Text("Square").tag(AKTable(.square))
+                        Text("Sine").tag(AKTable(.sine))
+                        Text("Sawtooth").tag(AKTable(.sawtooth))
+                    }).pickerStyle(SegmentedPickerStyle())
+                        .onReceive(parameters.$waveform2, perform: { waveform in
+                            self.synth.osc2.waveform = waveform
+                        })
+
+                    Text("Oscillator 2")
+                    Picker(selection: $parameters.waveform3, label: EmptyView(), content: {
+                        Text("Square").tag(AKTable(.square))
+                        Text("Sine").tag(AKTable(.sine))
+                        Text("Sawtooth").tag(AKTable(.sawtooth))
+                    }).pickerStyle(SegmentedPickerStyle())
+                        .onReceive(parameters.$waveform3, perform: { waveform in
+                            self.synth.osc3.waveform = waveform
+                        })
+                }
+            }
         }
     }
 }
