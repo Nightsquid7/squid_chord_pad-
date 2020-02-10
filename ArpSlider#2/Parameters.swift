@@ -27,6 +27,9 @@ class Parameters: ObservableObject {
     // Reverb
     @Published var decayTime: Double = 0.5
 
+    // Chord
+    @Published var currentChord: Int = 0
+    
     // Oscillators
     // 1
     @Published var pitchbend1: Double = 0

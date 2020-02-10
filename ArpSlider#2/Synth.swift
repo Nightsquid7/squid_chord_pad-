@@ -23,7 +23,13 @@ class Synth: ObservableObject {
     var oscMixer = AKMixer()
     var outputMixer = AKMixer()
 
+    // chord management
     var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74].reversed()
+    var chords: [[MIDINoteNumber]] = [[48,55,60,63,67,72,74].reversed(),
+                                      [49,56,61,64,68,73,75].reversed(),
+                                      
+    ]
+    var currentChordIndex: Int = 0
     var lastPlayedNote: MIDINoteNumber = 0
 
     var disposables = Set<AnyCancellable>()
@@ -81,7 +87,7 @@ class Synth: ObservableObject {
     //   AND you cannot play the same note multiple times in succession...
     //    * will stop last previously played note
     func playNote(at index: Int) {
-        let noteToPlay = notes[index]
+        let noteToPlay = chords[currentChordIndex][index]
         // only play a new note if it is different from the last note
         if lastPlayedNote != noteToPlay {
             self.oscillators.forEach { osc in

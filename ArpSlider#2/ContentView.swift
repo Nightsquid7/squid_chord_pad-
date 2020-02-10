@@ -12,6 +12,7 @@ import AudioKit
 struct ContentView: View {
 
     @State var synth = Synth()
+    @State var currentChord = 0
 
     init() {
 
@@ -32,7 +33,10 @@ struct ContentView: View {
                     HStack {
 
                         TouchPad(count: 7)
-                        .coordinateSpace(name: "mainV")
+                            .coordinateSpace(name: "mainV")
+
+                        ChordsView(synth: self.$synth)
+
                     }
                         .frame(height: g.size.height/4)
 

@@ -42,6 +42,8 @@ struct TouchPad: View {
             .gesture(
                 DragGesture(minimumDistance: 0)
                     .onChanged { value in
+//                        print("x: ", value.location.x)
+//                        print("y: ", value.location.y)
                         for (index, rect) in self.rects.enumerated() {
                             if rect.contains(value.location) {
                                 self.currentIndex = index
