@@ -15,7 +15,7 @@ struct ContentView: View {
 
     init() {
 
-        AudioKit.output = synth.outputMixer
+        AudioKit.output = synth.filter
 
         do {
             try AudioKit.start()
@@ -36,12 +36,18 @@ struct ContentView: View {
                     }
                         .frame(height: g.size.height/4)
 
-                    TempADSRView(synth: self.$synth)
-                        .frame(width: g.size.width, height: g.size.height/4)
-//                    OscParameterView(synth: self.$synth)
-                    DelayView(synth: self.$synth)
+                    ScrollView {
 
-                .padding(.horizontal,20)
+                        TempADSRView(synth: self.$synth)
+                            .frame(width: g.size.width, height: g.size.height/4)
+
+                        DelayView(synth: self.$synth)
+
+                        FilterView(synth: self.$synth)
+                        OscParameterView(synth: self.$synth)
+
+                    }
+                    .padding(.horizontal,20)
             }
         }
 

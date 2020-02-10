@@ -18,31 +18,31 @@ struct ADSRView: View {
 
             Text("ADSR")
 
-            HStack {
+            HStack {Text("")
 
-                VSlider(value: self.$synth.attack,
-                        min: 0.01,
-                        max: 100,
-                        width: 100,
-                        height: 200)
-                    .onReceive(self.synth.$attack, perform: { attack in
-                        self.synth.setAttack(attack)
-                    })
-
-                Potentiometer(value: self.$synth.decay)
-                    .onReceive(self.synth.$decay, perform: { decay in
-                        self.synth.setDecay(decay)
-                    })
-
-                Potentiometer(value: self.$synth.sustain)
-                    .onReceive(self.synth.$sustain, perform: { sustain in
-                        self.synth.setSustain(sustain)
-                    })
-
-                Potentiometer(value: self.$synth.release)
-                    .onReceive(self.synth.$release, perform: { release in
-                        self.synth.setRelease(release)
-                    })
+//                VSlider(value: self.$synth.attack,
+//                        min: 0.01,
+//                        max: 100,
+//                        width: 100,
+//                        height: 200)
+//                    .onReceive(self.synth.$attack, perform: { attack in
+//                        self.synth.setAttack(attack)
+//                    })
+//
+//                Potentiometer(value: self.$synth.decay)
+//                    .onReceive(self.synth.$decay, perform: { decay in
+//                        self.synth.setDecay(decay)
+//                    })
+//
+//                Potentiometer(value: self.$synth.sustain)
+//                    .onReceive(self.synth.$sustain, perform: { sustain in
+//                        self.synth.setSustain(sustain)
+//                    })
+//
+//                Potentiometer(value: self.$synth.release)
+//                    .onReceive(self.synth.$release, perform: { release in
+//                        self.synth.setRelease(release)
+//                    })
             }
         }
     }

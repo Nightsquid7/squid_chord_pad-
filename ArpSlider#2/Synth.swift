@@ -11,23 +11,15 @@ import Combine
 
 class Synth: ObservableObject {
 
-    @Published var attack: Double = 0.0
-    @Published var decay: Double = 0.3
-    @Published var sustain: Double = 0.1
-    @Published var release: Double = 0.1
-
-    @Published var delayTime: Double = 0.4
-    @Published var feedback: Double = 0.2
-    @Published var dryWetMix: Double = 0.7
-    @Published var pingPong: Bool  = true
-
+    // Oscillators
     var osc1 = AKOscillatorBank()
     var osc2 = AKOscillatorBank()
     var osc3 = AKOscillatorBank()
-
-    var delay = AKStereoDelay()
     var oscillators = [AKOscillatorBank]()
-
+    // effects
+    var delay = AKStereoDelay()
+    var filter = AKLowPassFilter()
+    var reverb = AKReverb2()
     var oscMixer = AKMixer()
     var outputMixer = AKMixer()
 
@@ -37,6 +29,7 @@ class Synth: ObservableObject {
     var disposables = Set<AnyCancellable>()
 
     init() {
+
         self.oscillators.append(osc1)
         self.oscillators.append(osc2)
         self.oscillators.append(osc3)
@@ -57,6 +50,7 @@ class Synth: ObservableObject {
         oscMixer = AKMixer(osc1, osc2, osc3)
         delay = AKStereoDelay(oscMixer, maximumDelayTime: 5.0, time: 0.4, feedback: 0.2, dryWetMix: 0.7, pingPong: true)
         outputMixer = AKMixer(delay, oscMixer)
+        filter = AKLowPassFilter(outputMixer)
         setListeners()
     }
 

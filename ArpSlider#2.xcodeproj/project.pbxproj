@@ -23,9 +23,10 @@
 		535585DD23ADC3E000F832FD /* ADSRFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535585DC23ADC3E000F832FD /* ADSRFrame.swift */; };
 		537B121323EF9ACD00622CC4 /* TempADSRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B121223EF9ACD00622CC4 /* TempADSRView.swift */; };
 		53C8DAF823F0D0AB00C750B5 /* OscParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */; };
-		53C8DAFA23F0D53400C750B5 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAF923F0D53400C750B5 /* Oscillator.swift */; };
+		53C8DAFA23F0D53400C750B5 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAF923F0D53400C750B5 /* Parameters.swift */; };
 		53C8DAFC23F0D99C00C750B5 /* DelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAFB23F0D99C00C750B5 /* DelayView.swift */; };
 		53C8DB0023F0DD6100C750B5 /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAFF23F0DD6100C750B5 /* ParameterSlider.swift */; };
+		53C8DB0223F0E8DD00C750B5 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DB0123F0E8DD00C750B5 /* FilterView.swift */; };
 		53D7B12D23EE7B6700224C29 /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7B12C23EE7B6700224C29 /* Synth.swift */; };
 		53D7B13323EEA64A00224C29 /* VSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7B13223EEA64A00224C29 /* VSlider.swift */; };
 		688EB26AA526D5D376E1941E /* Pods_ArpSlider_2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA54E193F22A7FAD0497383B /* Pods_ArpSlider_2Tests.framework */; };
@@ -75,9 +76,10 @@
 		535585DC23ADC3E000F832FD /* ADSRFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSRFrame.swift; sourceTree = "<group>"; };
 		537B121223EF9ACD00622CC4 /* TempADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempADSRView.swift; path = ../Pods/TempADSRView.swift; sourceTree = "<group>"; };
 		53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscParameterView.swift; sourceTree = "<group>"; };
-		53C8DAF923F0D53400C750B5 /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
+		53C8DAF923F0D53400C750B5 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		53C8DAFB23F0D99C00C750B5 /* DelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayView.swift; sourceTree = "<group>"; };
 		53C8DAFF23F0DD6100C750B5 /* ParameterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParameterSlider.swift; path = ../Pods/ParameterSlider.swift; sourceTree = "<group>"; };
+		53C8DB0123F0E8DD00C750B5 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		53D7B12C23EE7B6700224C29 /* Synth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synth.swift; sourceTree = "<group>"; };
 		53D7B13223EEA64A00224C29 /* VSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSlider.swift; sourceTree = "<group>"; };
 		62AC8344B76EFFE7460F39F4 /* Pods-ArpSlider#2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArpSlider#2.debug.xcconfig"; path = "Target Support Files/Pods-ArpSlider#2/Pods-ArpSlider#2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,8 +162,9 @@
 				53C8DAFF23F0DD6100C750B5 /* ParameterSlider.swift */,
 				537B121223EF9ACD00622CC4 /* TempADSRView.swift */,
 				53C8DAFB23F0D99C00C750B5 /* DelayView.swift */,
+				53C8DB0123F0E8DD00C750B5 /* FilterView.swift */,
 				53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */,
-				53C8DAF923F0D53400C750B5 /* Oscillator.swift */,
+				53C8DAF923F0D53400C750B5 /* Parameters.swift */,
 				5327460623A2002000F1A458 /* TouchPad.swift */,
 				5327460423A2001300F1A458 /* Rect.swift */,
 				53C8DAF623F0CF4700C750B5 /* Unfinished Views */,
@@ -454,7 +457,8 @@
 				53C8DAFC23F0D99C00C750B5 /* DelayView.swift in Sources */,
 				5327460523A2001400F1A458 /* Rect.swift in Sources */,
 				537B121323EF9ACD00622CC4 /* TempADSRView.swift in Sources */,
-				53C8DAFA23F0D53400C750B5 /* Oscillator.swift in Sources */,
+				53C8DB0223F0E8DD00C750B5 /* FilterView.swift in Sources */,
+				53C8DAFA23F0D53400C750B5 /* Parameters.swift in Sources */,
 				53C8DAF823F0D0AB00C750B5 /* OscParameterView.swift in Sources */,
 				535585DD23ADC3E000F832FD /* ADSRFrame.swift in Sources */,
 			);

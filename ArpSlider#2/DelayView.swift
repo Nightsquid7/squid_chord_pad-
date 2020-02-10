@@ -10,6 +10,7 @@ import SwiftUI
 
 struct DelayView: View {
 
+    @EnvironmentObject var parameters: Parameters
     @Binding var synth: Synth
     @State var isVisible: Bool = false
 
@@ -24,18 +25,18 @@ struct DelayView: View {
                 VStack(alignment: .leading) {
 
                     Text("Time")
-                    Slider(value: self.$synth.delayTime, in: 0...5)
-                        .onReceive(self.synth.$delayTime, perform: { delayTime in
+                    Slider(value: $parameters.delayTime, in: 0...5)
+                        .onReceive(parameters.$delayTime, perform: { delayTime in
                             self.synth.delay.time = delayTime
                         })
                     Text("Feedback")
-                    Slider(value: self.$synth.feedback, in: 0...1)
-                        .onReceive(self.synth.$feedback, perform: { feedback in
+                    Slider(value: $parameters.feedback, in: 0...1)
+                        .onReceive(parameters.$feedback, perform: { feedback in
                             self.synth.delay.feedback = feedback
                         })
                     Text("Dry Wet Mix")
-                    Slider(value: self.$synth.dryWetMix, in: 0...1)
-                        .onReceive(self.synth.$dryWetMix, perform: { dryWetMix in
+                    Slider(value: $parameters.dryWetMix, in: 0...1)
+                        .onReceive(parameters.$dryWetMix, perform: { dryWetMix in
                             self.synth.delay.dryWetMix = dryWetMix
                         })
                 }
