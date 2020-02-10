@@ -31,7 +31,7 @@ struct VSlider: View {
                 .cornerRadius(7)
                 .frame(width: width, height: height/4)
                 .offset(y: yOffset)
-                .gesture (
+                .gesture(
                     DragGesture()
                         .onChanged { value in
                             let dragHeight = value.translation.height

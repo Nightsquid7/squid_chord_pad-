@@ -11,10 +11,6 @@ import AudioKit
 
 struct ADSRView: View {
 
-    @Binding var attack: Double
-    @Binding var decay: Double
-    @Binding var sustain: Double
-    @Binding var release: Double
     @Binding var synth: Synth
 
     var body: some View {
@@ -23,7 +19,7 @@ struct ADSRView: View {
             Text("ADSR")
 
             HStack {
-//                Potentiometer(value: self.$synth.attack)
+
                 VSlider(value: self.$synth.attack,
                         min: 0.01,
                         max: 100,
@@ -52,8 +48,9 @@ struct ADSRView: View {
     }
 }
 
-struct ADSRView_Previews: PreviewProvider {
-    static var previews: some View {
-        ADSRView(attack: .constant(1), decay: .constant(30), sustain: .constant(70), release: .constant(20), synth: .constant(Synth()))
-    }
-}
+//struct ADSRView_Previews: PreviewProvider {
+//    static var previews: some View {
+// swiftlint:disable line_length
+//        ADSRView(attack: .constant(1), decay: .constant(30), sustain: .constant(70), release: .constant(20), synth: .constant(Synth()))
+//    }
+//}

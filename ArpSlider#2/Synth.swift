@@ -16,6 +16,11 @@ class Synth: ObservableObject {
     @Published var sustain: Double = 0.1
     @Published var release: Double = 0.1
 
+    @Published var delayTime: Double = 0.4
+    @Published var feedback: Double = 0.2
+    @Published var dryWetMix: Double = 0.7
+    @Published var pingPong: Bool  = true
+
     var osc1 = AKOscillatorBank()
     var osc2 = AKOscillatorBank()
     var osc3 = AKOscillatorBank()

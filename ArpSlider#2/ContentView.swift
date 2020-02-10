@@ -32,14 +32,14 @@ struct ContentView: View {
                     HStack {
 
                         TouchPad(count: 7)
-                            .coordinateSpace(name: "mainV")
+                        .coordinateSpace(name: "mainV")
                     }
                         .frame(height: g.size.height/4)
 
-
                     TempADSRView(synth: self.$synth)
                         .frame(width: g.size.width, height: g.size.height/4)
-
+//                    OscParameterView(synth: self.$synth)
+                    DelayView(synth: self.$synth)
 
                 .padding(.horizontal,20)
             }
