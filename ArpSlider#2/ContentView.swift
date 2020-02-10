@@ -18,7 +18,10 @@ struct ContentView: View {
     @State var showingFilter: Bool = false
     @State var showingOscParameters: Bool = false
 
+
     init() {
+
+        
 
         AudioKit.output = synth.filter
 

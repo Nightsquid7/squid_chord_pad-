@@ -22,10 +22,7 @@ struct ChordsView: View {
                             .fill((column + (row * 3) == self.currentChord) ? Color.red : Color.black)
                             .onTapGesture {
                                 self.currentChord = column + (row * 3)
-//                                self.synth.currentChordIndex = self.currentChord
-                                if self.currentChord % 2 == 0 {
-                                     self.synth.currentChordIndex = 0
-                                } else { self.synth.currentChordIndex = 1 }
+                                self.synth.currentChordIndex = self.currentChord
                         }
                     }
                 }

@@ -24,10 +24,17 @@ class Synth: ObservableObject {
     var outputMixer = AKMixer()
 
     // chord management
-    var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74].reversed()
-    var chords: [[MIDINoteNumber]] = [[48,55,60,63,67,72,74].reversed(),
-                                      [49,56,61,64,68,73,75].reversed(),
-                                      
+
+    var chords: [[MIDINoteNumber]] = [[51, 63, 67, 74, 75, 77, 79].reversed(),
+                                      [41, 53, 68, 70, 72, 74, 82].reversed(),
+                                      [44, 56, 63, 68, 72, 75, 82].reversed(),
+                                      [43, 55, 58, 70, 74, 75, 77].reversed(),
+                                      [44, 56, 60, 63, 67, 70, 74].reversed(),
+                                      [46, 58, 62, 70, 74, 75, 82].reversed(),
+                                      [48, 60, 67, 75, 82, 84, 72].reversed(),
+                                      [49, 61, 68, 76, 83, 85, 73].reversed(),
+                                      [44, 56, 60, 63, 67, 70, 74]
+
     ]
     var currentChordIndex: Int = 0
     var lastPlayedNote: MIDINoteNumber = 0
