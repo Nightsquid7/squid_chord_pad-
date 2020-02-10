@@ -29,7 +29,6 @@ class Parameters: ObservableObject {
 
     // Chord
     @Published var currentChord: Int = 0
-    
     // Oscillators
     // 1
     @Published var pitchbend1: Double = 0

@@ -29,6 +29,7 @@
 		53C8DB0223F0E8DD00C750B5 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DB0123F0E8DD00C750B5 /* FilterView.swift */; };
 		53C8DB0423F0F13C00C750B5 /* ChordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DB0323F0F13C00C750B5 /* ChordsView.swift */; };
 		53C8DB0623F0FD4400C750B5 /* Array Of Chords.mid in Resources */ = {isa = PBXBuildFile; fileRef = 53C8DB0523F0FD4400C750B5 /* Array Of Chords.mid */; };
+		53C8DB0823F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DB0723F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift */; };
 		53D7B12D23EE7B6700224C29 /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7B12C23EE7B6700224C29 /* Synth.swift */; };
 		53D7B13323EEA64A00224C29 /* VSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7B13223EEA64A00224C29 /* VSlider.swift */; };
 		688EB26AA526D5D376E1941E /* Pods_ArpSlider_2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA54E193F22A7FAD0497383B /* Pods_ArpSlider_2Tests.framework */; };
@@ -84,6 +85,7 @@
 		53C8DB0123F0E8DD00C750B5 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		53C8DB0323F0F13C00C750B5 /* ChordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordsView.swift; sourceTree = "<group>"; };
 		53C8DB0523F0FD4400C750B5 /* Array Of Chords.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Array Of Chords.mid"; sourceTree = "<group>"; };
+		53C8DB0723F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputWaveformPlotRepresentable.swift; sourceTree = "<group>"; };
 		53D7B12C23EE7B6700224C29 /* Synth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synth.swift; sourceTree = "<group>"; };
 		53D7B13223EEA64A00224C29 /* VSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSlider.swift; sourceTree = "<group>"; };
 		62AC8344B76EFFE7460F39F4 /* Pods-ArpSlider#2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArpSlider#2.debug.xcconfig"; path = "Target Support Files/Pods-ArpSlider#2/Pods-ArpSlider#2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				53C8DB0323F0F13C00C750B5 /* ChordsView.swift */,
 				53D7B12C23EE7B6700224C29 /* Synth.swift */,
 				537B121223EF9ACD00622CC4 /* TempADSRView.swift */,
+				53C8DB0723F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift */,
 				53C8DAFB23F0D99C00C750B5 /* DelayView.swift */,
 				53C8DB0123F0E8DD00C750B5 /* FilterView.swift */,
 				53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */,
@@ -457,6 +460,7 @@
 				5349C5B123A472230052B716 /* ADSRView.swift in Sources */,
 				532745D923A1FF5D00F1A458 /* ContentView.swift in Sources */,
 				5327460723A2002000F1A458 /* TouchPad.swift in Sources */,
+				53C8DB0823F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift in Sources */,
 				5349C5B323A474780052B716 /* PotentiometerView.swift in Sources */,
 				53D7B12D23EE7B6700224C29 /* Synth.swift in Sources */,
 				53C8DB0023F0DD6100C750B5 /* ParameterSlider.swift in Sources */,

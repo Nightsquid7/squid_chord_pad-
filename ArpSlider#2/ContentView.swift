@@ -8,6 +8,7 @@
 
 import SwiftUI
 import AudioKit
+import AudioKitUI
 
 struct ContentView: View {
 
@@ -18,10 +19,9 @@ struct ContentView: View {
     @State var showingFilter: Bool = false
     @State var showingOscParameters: Bool = false
 
+//    let plot = AKOutputWaveformPlot()
 
     init() {
-
-        
 
         AudioKit.output = synth.filter
 
@@ -48,6 +48,7 @@ struct ContentView: View {
                         .frame(height: g.size.height/4)
 
                     ScrollView {
+//                        OutputWaveformPlot(input: self.synth.filter, g: g)
 
                         TempADSRView(synth: self.$synth, isVisible: self.$showingADSR)
                             .frame(width: g.size.width, height: g.size.height/4)
