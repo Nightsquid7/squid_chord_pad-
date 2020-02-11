@@ -14,6 +14,7 @@ struct ContentView: View {
 
     @State var synth = Synth()
 
+    @State var showingTouchpad: Bool = true
     @State var showingADSR: Bool = false
     @State var showingDelay: Bool = false
     @State var showingFilter: Bool = false
@@ -37,8 +38,8 @@ struct ContentView: View {
         // swiftlint:disable identifier_name
         GeometryReader { g in
                 VStack {
+                    // 
                     HStack {
-
                         TouchPad(count: 7)
                             .coordinateSpace(name: "mainV")
 
@@ -47,6 +48,7 @@ struct ContentView: View {
                     }
                     .frame(width: g.size.width, height: g.size.height/4)
 
+                    // sequencer controls
                     Rectangle()
                         .fill(self.synth.seq.isPlaying ? Color.red : Color.black)
                         .onTapGesture {

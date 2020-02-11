@@ -13,7 +13,7 @@ class Sequencer {
 
     var seq = AKAppleSequencer()
 
-    var isPlaying: Bool  {
+    var isPlaying: Bool {
         return self.seq.isPlaying
     }
 
@@ -25,13 +25,11 @@ class Sequencer {
         // bpm of "building a track really quick"
         seq.setTempo(138)
 
-
         let midiCallbackInstrument = AKMIDICallbackInstrument()
         midiCallbackInstrument.callback = midiCallback
         seq.setGlobalMIDIOutput(midiCallbackInstrument.midiIn)
 
     }
-
 
     // called in the background every time the sequencer triggers a note
     func midiCallback(statusByte: MIDIByte, note: MIDIByte, velocity: MIDIByte) {
