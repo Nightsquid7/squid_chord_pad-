@@ -22,6 +22,8 @@
 		5349C5B323A474780052B716 /* PotentiometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349C5B223A474780052B716 /* PotentiometerView.swift */; };
 		535585DD23ADC3E000F832FD /* ADSRFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535585DC23ADC3E000F832FD /* ADSRFrame.swift */; };
 		537B121323EF9ACD00622CC4 /* TempADSRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B121223EF9ACD00622CC4 /* TempADSRView.swift */; };
+		539A7ECE23F2776400DF21ED /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539A7ECD23F2776400DF21ED /* Sequencer.swift */; };
+		539A7ED123F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid in Resources */ = {isa = PBXBuildFile; fileRef = 539A7ED023F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid */; };
 		53C8DAF823F0D0AB00C750B5 /* OscParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */; };
 		53C8DAFA23F0D53400C750B5 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAF923F0D53400C750B5 /* Parameters.swift */; };
 		53C8DAFC23F0D99C00C750B5 /* DelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAFB23F0D99C00C750B5 /* DelayView.swift */; };
@@ -78,6 +80,8 @@
 		5349C5B223A474780052B716 /* PotentiometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentiometerView.swift; sourceTree = "<group>"; };
 		535585DC23ADC3E000F832FD /* ADSRFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSRFrame.swift; sourceTree = "<group>"; };
 		537B121223EF9ACD00622CC4 /* TempADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempADSRView.swift; path = ../../Pods/TempADSRView.swift; sourceTree = "<group>"; };
+		539A7ECD23F2776400DF21ED /* Sequencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequencer.swift; sourceTree = "<group>"; };
+		539A7ED023F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = " Glass Tiger Beaming Lead #2.mid"; sourceTree = "<group>"; };
 		53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscParameterView.swift; sourceTree = "<group>"; };
 		53C8DAF923F0D53400C750B5 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		53C8DAFB23F0D99C00C750B5 /* DelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayView.swift; sourceTree = "<group>"; };
@@ -166,7 +170,7 @@
 				532745D823A1FF5D00F1A458 /* ContentView.swift */,
 				539A7ECB23F275E000DF21ED /* Views */,
 				539A7ECC23F275F900DF21ED /* Models */,
-				53C8DB0523F0FD4400C750B5 /* Array Of Chords.mid */,
+				539A7ECF23F27B6B00DF21ED /* MIDI */,
 				53C8DAF623F0CF4700C750B5 /* Unfinished Views */,
 				532745DA23A1FF5E00F1A458 /* Assets.xcassets */,
 				532745DF23A1FF5E00F1A458 /* LaunchScreen.storyboard */,
@@ -220,9 +224,19 @@
 			isa = PBXGroup;
 			children = (
 				53D7B12C23EE7B6700224C29 /* Synth.swift */,
+				539A7ECD23F2776400DF21ED /* Sequencer.swift */,
 				53C8DAF923F0D53400C750B5 /* Parameters.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		539A7ECF23F27B6B00DF21ED /* MIDI */ = {
+			isa = PBXGroup;
+			children = (
+				539A7ED023F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid */,
+				53C8DB0523F0FD4400C750B5 /* Array Of Chords.mid */,
+			);
+			path = MIDI;
 			sourceTree = "<group>";
 		};
 		53C8DAF623F0CF4700C750B5 /* Unfinished Views */ = {
@@ -358,6 +372,7 @@
 			files = (
 				532745E123A1FF5E00F1A458 /* LaunchScreen.storyboard in Resources */,
 				532745DE23A1FF5E00F1A458 /* Preview Assets.xcassets in Resources */,
+				539A7ED123F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid in Resources */,
 				53C8DB0623F0FD4400C750B5 /* Array Of Chords.mid in Resources */,
 				532745DB23A1FF5E00F1A458 /* Assets.xcassets in Resources */,
 			);
@@ -482,6 +497,7 @@
 				53C8DB0023F0DD6100C750B5 /* ParameterSlider.swift in Sources */,
 				53D7B13323EEA64A00224C29 /* VSlider.swift in Sources */,
 				53C8DAFC23F0D99C00C750B5 /* DelayView.swift in Sources */,
+				539A7ECE23F2776400DF21ED /* Sequencer.swift in Sources */,
 				5327460523A2001400F1A458 /* Rect.swift in Sources */,
 				53C8DB0423F0F13C00C750B5 /* ChordsView.swift in Sources */,
 				537B121323EF9ACD00622CC4 /* TempADSRView.swift in Sources */,

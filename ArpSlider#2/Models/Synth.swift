@@ -39,6 +39,8 @@ class Synth: ObservableObject {
     var currentChordIndex: Int = 0
     var lastPlayedNote: MIDINoteNumber = 0
 
+    let seq = Sequencer()
+
     var disposables = Set<AnyCancellable>()
 
     init() {
@@ -61,7 +63,7 @@ class Synth: ObservableObject {
         setRelease(0.1)
 
         oscMixer = AKMixer(osc1, osc2, osc3)
-        delay = AKStereoDelay(oscMixer, maximumDelayTime: 5.0, time: 0.4, feedback: 0.2, dryWetMix: 0.7, pingPong: true)
+        delay = AKStereoDelay(oscMixer, maximumDelayTime: 5.0, time: 0.4, feedback: 0.2, dryWetMix: 1.0, pingPong: true)
         outputMixer = AKMixer(delay, oscMixer)
         filter = AKLowPassFilter(outputMixer)
         setListeners()
@@ -105,10 +107,33 @@ class Synth: ObservableObject {
         }
     }
 
+    // play from midi note-on with velocity
+    func play(note: MIDINoteNumber, with velocity: MIDIVelocity) {
+        oscillators.forEach { osc in
+            osc.play(noteNumber: note, velocity: velocity)
+        }
+    }
+
+    // stop midi note
+    func stop(note: MIDINoteNumber) {
+        oscillators.forEach { osc in
+            osc.stop(noteNumber: note)
+        }
+    }
+
+    func playSequence() {
+        if seq.seq.isPlaying {
+            seq.seq.stop()
+        } else {
+            seq.seq.play()
+        }
+    }
+
     // respond to notifications that are generated on the touchpad
+    // or from the sequencer
     func setListeners() {
         // set note on listener
-        _ = NotificationCenter.default.publisher(for: Notification.Name("note on"))
+        _ = NotificationCenter.default.publisher(for: Notification.Name("touchpad note on"))
             .sink(receiveValue: { notification in
                 if let index = notification.object as? Int {
                     self.playNote(at: index)
@@ -128,6 +153,27 @@ class Synth: ObservableObject {
                 self.lastPlayedNote = 0
             })
             .store(in: &disposables)
+
+        // receive note-on on from sequencer
+        _ = NotificationCenter.default
+            .publisher(for: Notification.Name("note-on"))
+                .sink(receiveValue: { notification in
+                    if let (note, velocity) = notification.object as? (MIDINoteNumber, MIDIVelocity) {
+                        self.play(note: note, with: velocity)
+                    }
+                })
+                .store(in: &disposables)
+
+        // receive note-off from sequencer
+        _ = NotificationCenter.default
+            .publisher(for: Notification.Name("note-off"))
+                .sink(receiveValue: { notification in
+                    if let note = notification.object as? MIDINoteNumber {
+                        self.stop(note: note)
+                    }
+                })
+                .store(in: &disposables)
+
     }
 
 }

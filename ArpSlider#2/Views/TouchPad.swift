@@ -45,7 +45,7 @@ struct TouchPad: View {
                         for (index, rect) in self.rects.enumerated() {
                             if rect.contains(value.location) {
                                 self.currentIndex = index
-                                NotificationCenter.default.post(name: Notification.Name("note on"), object: index)
+                                NotificationCenter.default.post(name: Notification.Name("touchpad note on"), object: index)
                             }
                         }
                 }

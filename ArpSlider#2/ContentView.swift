@@ -47,7 +47,11 @@ struct ContentView: View {
                     }
                     .frame(width: g.size.width, height: g.size.height/4)
 
-                    Spacer()
+                    Rectangle()
+                        .fill(self.synth.seq.isPlaying ? Color.red : Color.black)
+                        .onTapGesture {
+                            self.synth.playSequence()
+                    }
 
                     ScrollView {
 
@@ -59,14 +63,14 @@ struct ContentView: View {
 
                         FilterView(synth: self.$synth, isVisible: self.$showingFilter)
                             .padding(.trailing, 10)
-                        
+        
                         OscParameterView(synth: self.$synth, isVisible: self.$showingOscParameters)
                             .padding(.trailing, 10)
                     }
 
             }
         }
-                        .padding(20)
+
 
     }
 }
