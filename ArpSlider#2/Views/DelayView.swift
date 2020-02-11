@@ -42,6 +42,7 @@ struct DelayView: View {
                 }
             }
         }
+        .padding(.trailing, 10)
     }
 }
 

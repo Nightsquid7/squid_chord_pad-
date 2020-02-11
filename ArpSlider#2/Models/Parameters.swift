@@ -19,7 +19,7 @@ class Parameters: ObservableObject {
     // Delay
     @Published var delayTime: Double = 0.4
     @Published var feedback: Double = 0.2
-    @Published var dryWetMix: Double = 0.7
+    @Published var dryWetMix: Double = 1
     @Published var pingPong: Bool  = true
     // Filter
     @Published var cutoff: Double = 20_000

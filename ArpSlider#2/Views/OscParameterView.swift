@@ -24,6 +24,7 @@ struct OscParameterView: View {
 
             if isVisible {
                 VStack(alignment: .leading) {
+
                     Text("Oscillator 1")
                     Picker(selection: $parameters.waveform1, label: EmptyView(), content: {
                         Text("Square").tag(AKTable(.square))
@@ -33,6 +34,7 @@ struct OscParameterView: View {
                         .onReceive(parameters.$waveform1, perform: { waveform in
                             self.synth.osc1.waveform = waveform
                         })
+
                     Text("Oscillator 2")
                     Picker(selection: $parameters.waveform2, label: EmptyView(), content: {
                         Text("Square").tag(AKTable(.square))
@@ -43,7 +45,7 @@ struct OscParameterView: View {
                             self.synth.osc2.waveform = waveform
                         })
 
-                    Text("Oscillator 2")
+                    Text("Oscillator 3")
                     Picker(selection: $parameters.waveform3, label: EmptyView(), content: {
                         Text("Square").tag(AKTable(.square))
                         Text("Sine").tag(AKTable(.sine))
@@ -55,6 +57,7 @@ struct OscParameterView: View {
                 }
             }
         }
+        .padding(.trailing, 10)
     }
 }
 

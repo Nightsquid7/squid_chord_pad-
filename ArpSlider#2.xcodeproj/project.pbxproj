@@ -77,7 +77,7 @@
 		5349C5B023A472230052B716 /* ADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSRView.swift; sourceTree = "<group>"; };
 		5349C5B223A474780052B716 /* PotentiometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentiometerView.swift; sourceTree = "<group>"; };
 		535585DC23ADC3E000F832FD /* ADSRFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSRFrame.swift; sourceTree = "<group>"; };
-		537B121223EF9ACD00622CC4 /* TempADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempADSRView.swift; path = ../Pods/TempADSRView.swift; sourceTree = "<group>"; };
+		537B121223EF9ACD00622CC4 /* TempADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempADSRView.swift; path = ../../Pods/TempADSRView.swift; sourceTree = "<group>"; };
 		53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscParameterView.swift; sourceTree = "<group>"; };
 		53C8DAF923F0D53400C750B5 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
 		53C8DAFB23F0D99C00C750B5 /* DelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayView.swift; sourceTree = "<group>"; };
@@ -164,16 +164,8 @@
 				532745D423A1FF5D00F1A458 /* AppDelegate.swift */,
 				532745D623A1FF5D00F1A458 /* SceneDelegate.swift */,
 				532745D823A1FF5D00F1A458 /* ContentView.swift */,
-				53C8DB0323F0F13C00C750B5 /* ChordsView.swift */,
-				53D7B12C23EE7B6700224C29 /* Synth.swift */,
-				537B121223EF9ACD00622CC4 /* TempADSRView.swift */,
-				53C8DB0723F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift */,
-				53C8DAFB23F0D99C00C750B5 /* DelayView.swift */,
-				53C8DB0123F0E8DD00C750B5 /* FilterView.swift */,
-				53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */,
-				53C8DAF923F0D53400C750B5 /* Parameters.swift */,
-				5327460623A2002000F1A458 /* TouchPad.swift */,
-				5327460423A2001300F1A458 /* Rect.swift */,
+				539A7ECB23F275E000DF21ED /* Views */,
+				539A7ECC23F275F900DF21ED /* Models */,
 				53C8DB0523F0FD4400C750B5 /* Array Of Chords.mid */,
 				53C8DAF623F0CF4700C750B5 /* Unfinished Views */,
 				532745DA23A1FF5E00F1A458 /* Assets.xcassets */,
@@ -210,9 +202,33 @@
 			path = "ArpSlider#2UITests";
 			sourceTree = "<group>";
 		};
+		539A7ECB23F275E000DF21ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5327460623A2002000F1A458 /* TouchPad.swift */,
+				53C8DB0323F0F13C00C750B5 /* ChordsView.swift */,
+				537B121223EF9ACD00622CC4 /* TempADSRView.swift */,
+				53C8DAFB23F0D99C00C750B5 /* DelayView.swift */,
+				53C8DB0123F0E8DD00C750B5 /* FilterView.swift */,
+				53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */,
+				5327460423A2001300F1A458 /* Rect.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		539A7ECC23F275F900DF21ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53D7B12C23EE7B6700224C29 /* Synth.swift */,
+				53C8DAF923F0D53400C750B5 /* Parameters.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		53C8DAF623F0CF4700C750B5 /* Unfinished Views */ = {
 			isa = PBXGroup;
 			children = (
+				53C8DB0723F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift */,
 				53C8DAFF23F0DD6100C750B5 /* ParameterSlider.swift */,
 				53D7B13223EEA64A00224C29 /* VSlider.swift */,
 				5349C5B023A472230052B716 /* ADSRView.swift */,

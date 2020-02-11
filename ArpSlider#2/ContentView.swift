@@ -45,24 +45,28 @@ struct ContentView: View {
                         ChordsView(synth: self.$synth)
 
                     }
-                        .frame(height: g.size.height/4)
+                    .frame(width: g.size.width, height: g.size.height/4)
+
+                    Spacer()
 
                     ScrollView {
-//                        OutputWaveformPlot(input: self.synth.filter, g: g)
 
                         TempADSRView(synth: self.$synth, isVisible: self.$showingADSR)
-                            .frame(width: g.size.width, height: g.size.height/4)
+                            .padding(.trailing, 10)
 
                         DelayView(synth: self.$synth, isVisible: self.$showingDelay)
+                            .padding(.trailing, 10)
 
                         FilterView(synth: self.$synth, isVisible: self.$showingFilter)
+                            .padding(.trailing, 10)
                         
                         OscParameterView(synth: self.$synth, isVisible: self.$showingOscParameters)
-
+                            .padding(.trailing, 10)
                     }
-                    .padding(.horizontal,20)
+
             }
         }
+                        .padding(20)
 
     }
 }

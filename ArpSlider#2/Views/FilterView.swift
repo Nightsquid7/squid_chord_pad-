@@ -22,12 +22,13 @@ struct FilterView: View {
             })
 
             if isVisible {
-                Slider(value: $parameters.cutoff, in: 0...20_000)
+                Slider(value: $parameters.cutoff, in: 0...10_000)
                     .onReceive(parameters.$cutoff, perform: { cutoff in
                         self.synth.filter.cutoffFrequency = cutoff
                     })
             }
         }
+        .padding(.trailing, 10)
     }
 }
 
