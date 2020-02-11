@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import ArpSlider_2
-
+// swiftlint:disable type_name
 class ArpSlider_2Tests: XCTestCase {
 
     override func setUp() {

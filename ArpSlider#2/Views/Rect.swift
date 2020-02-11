@@ -26,6 +26,7 @@ struct Rect: View {
                 .shadow(radius: 8)
     }
     var body: some View {
+        // swiftlint:disable identifier_name
         GeometryReader { g in
             self.getRect(g)
         } // geometry R

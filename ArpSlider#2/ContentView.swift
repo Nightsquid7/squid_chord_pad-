@@ -8,69 +8,71 @@
 
 import SwiftUI
 import AudioKit
-
+import AudioKitUI
 
 struct ContentView: View {
-    @State var notes: [MIDINoteNumber] = [48,55,60,63,67,72,74].reversed()
-    @State var osc = AKOscillatorBank()
-    var mixer = AKMixer()
-    var delay = AKStereoDelay()
+
+    @State var synth = Synth()
+
+    @State var showingTouchpad: Bool = true
+    @State var showingADSR: Bool = false
+    @State var showingDelay: Bool = false
+    @State var showingFilter: Bool = false
+    @State var showingOscParameters: Bool = false
+
+//    let plot = AKOutputWaveformPlot()
+
     init() {
 
-        osc.waveform = AKTable(.sawtooth)
-        osc.attackDuration = 0.0
-        osc.decayDuration = 0.3
-        osc.sustainLevel = 0.1
-        osc.releaseDuration = 0.1
-
-        delay = AKStereoDelay(osc, maximumDelayTime: 5.0, time: 0.4, feedback: 0.2, dryWetMix: 0.7, pingPong: true)
-
-
-        AudioKit.output = delay
+        AudioKit.output = synth.filter
 
         do {
             try AudioKit.start()
         } catch {
             print(error)
         }
-        
+
     }
 
     var body: some View {
+        // swiftlint:disable identifier_name
         GeometryReader { g in
-
-            HStack {
-
-                TouchPad(osc: self.osc,
-                         notes: self.$notes, count: self.notes.count)
-
                 VStack {
-                Rectangle()
-                    .onTapGesture {
-                        self.notes = [49,56,61,64,68,73,75].reversed()
-                }
+                    // 
+                    HStack {
+                        TouchPad(count: 7)
+                            .coordinateSpace(name: "mainV")
 
-                Rectangle()
-                    .onTapGesture {
-                        self.notes = [48,55,60,63,67,72,74].reversed()
-                }
-                }
-                VStack {
-                Rectangle()
-                    .onTapGesture {
-                        self.notes = [44,51,55,56,60,63,68].reversed()
-                }
+                        ChordsView(synth: self.$synth)
 
-                Rectangle()
-                    .onTapGesture {
-                        self.notes = [41,53,55,56,63,67,68].reversed()
-                }
-                }
+                    }
+                    .frame(width: g.size.width, height: g.size.height/4)
+
+                    // sequencer controls
+                    Rectangle()
+                        .fill(self.synth.seq.isPlaying ? Color.red : Color.black)
+                        .onTapGesture {
+                            self.synth.playSequence()
+                    }
+
+                    ScrollView {
+
+                        TempADSRView(synth: self.$synth, isVisible: self.$showingADSR)
+                            .padding(.trailing, 10)
+
+                        DelayView(synth: self.$synth, isVisible: self.$showingDelay)
+                            .padding(.trailing, 10)
+
+                        FilterView(synth: self.$synth, isVisible: self.$showingFilter)
+                            .padding(.trailing, 10)
+        
+                        OscParameterView(synth: self.$synth, isVisible: self.$showingOscParameters)
+                            .padding(.trailing, 10)
+                    }
+
             }
-            .frame(height: g.size.height / 2)
-            .padding(.horizontal,20)
-                .coordinateSpace(name: "mainV")
         }
+
 
     }
 }

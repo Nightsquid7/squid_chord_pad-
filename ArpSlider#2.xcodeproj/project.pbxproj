@@ -18,6 +18,22 @@
 		532745F723A1FF5E00F1A458 /* ArpSlider_2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532745F623A1FF5E00F1A458 /* ArpSlider_2UITests.swift */; };
 		5327460523A2001400F1A458 /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5327460423A2001300F1A458 /* Rect.swift */; };
 		5327460723A2002000F1A458 /* TouchPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5327460623A2002000F1A458 /* TouchPad.swift */; };
+		5349C5B123A472230052B716 /* ADSRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349C5B023A472230052B716 /* ADSRView.swift */; };
+		5349C5B323A474780052B716 /* PotentiometerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5349C5B223A474780052B716 /* PotentiometerView.swift */; };
+		535585DD23ADC3E000F832FD /* ADSRFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535585DC23ADC3E000F832FD /* ADSRFrame.swift */; };
+		537B121323EF9ACD00622CC4 /* TempADSRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B121223EF9ACD00622CC4 /* TempADSRView.swift */; };
+		539A7ECE23F2776400DF21ED /* Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539A7ECD23F2776400DF21ED /* Sequencer.swift */; };
+		539A7ED123F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid in Resources */ = {isa = PBXBuildFile; fileRef = 539A7ED023F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid */; };
+		53C8DAF823F0D0AB00C750B5 /* OscParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */; };
+		53C8DAFA23F0D53400C750B5 /* Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAF923F0D53400C750B5 /* Parameters.swift */; };
+		53C8DAFC23F0D99C00C750B5 /* DelayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAFB23F0D99C00C750B5 /* DelayView.swift */; };
+		53C8DB0023F0DD6100C750B5 /* ParameterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DAFF23F0DD6100C750B5 /* ParameterSlider.swift */; };
+		53C8DB0223F0E8DD00C750B5 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DB0123F0E8DD00C750B5 /* FilterView.swift */; };
+		53C8DB0423F0F13C00C750B5 /* ChordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DB0323F0F13C00C750B5 /* ChordsView.swift */; };
+		53C8DB0623F0FD4400C750B5 /* Array Of Chords.mid in Resources */ = {isa = PBXBuildFile; fileRef = 53C8DB0523F0FD4400C750B5 /* Array Of Chords.mid */; };
+		53C8DB0823F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C8DB0723F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift */; };
+		53D7B12D23EE7B6700224C29 /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7B12C23EE7B6700224C29 /* Synth.swift */; };
+		53D7B13323EEA64A00224C29 /* VSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7B13223EEA64A00224C29 /* VSlider.swift */; };
 		688EB26AA526D5D376E1941E /* Pods_ArpSlider_2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA54E193F22A7FAD0497383B /* Pods_ArpSlider_2Tests.framework */; };
 		FBDA16B88217F77365785329 /* Pods_ArpSlider_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A777DEB7BBE4D73A5F62812 /* Pods_ArpSlider_2.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +76,22 @@
 		532745F823A1FF5E00F1A458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5327460423A2001300F1A458 /* Rect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
 		5327460623A2002000F1A458 /* TouchPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchPad.swift; sourceTree = "<group>"; };
+		5349C5B023A472230052B716 /* ADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSRView.swift; sourceTree = "<group>"; };
+		5349C5B223A474780052B716 /* PotentiometerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotentiometerView.swift; sourceTree = "<group>"; };
+		535585DC23ADC3E000F832FD /* ADSRFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSRFrame.swift; sourceTree = "<group>"; };
+		537B121223EF9ACD00622CC4 /* TempADSRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TempADSRView.swift; path = ../../Pods/TempADSRView.swift; sourceTree = "<group>"; };
+		539A7ECD23F2776400DF21ED /* Sequencer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequencer.swift; sourceTree = "<group>"; };
+		539A7ED023F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = " Glass Tiger Beaming Lead #2.mid"; sourceTree = "<group>"; };
+		53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OscParameterView.swift; sourceTree = "<group>"; };
+		53C8DAF923F0D53400C750B5 /* Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameters.swift; sourceTree = "<group>"; };
+		53C8DAFB23F0D99C00C750B5 /* DelayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayView.swift; sourceTree = "<group>"; };
+		53C8DAFF23F0DD6100C750B5 /* ParameterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParameterSlider.swift; path = ../../Pods/ParameterSlider.swift; sourceTree = "<group>"; };
+		53C8DB0123F0E8DD00C750B5 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		53C8DB0323F0F13C00C750B5 /* ChordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordsView.swift; sourceTree = "<group>"; };
+		53C8DB0523F0FD4400C750B5 /* Array Of Chords.mid */ = {isa = PBXFileReference; lastKnownFileType = audio.midi; path = "Array Of Chords.mid"; sourceTree = "<group>"; };
+		53C8DB0723F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputWaveformPlotRepresentable.swift; sourceTree = "<group>"; };
+		53D7B12C23EE7B6700224C29 /* Synth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Synth.swift; sourceTree = "<group>"; };
+		53D7B13223EEA64A00224C29 /* VSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSlider.swift; sourceTree = "<group>"; };
 		62AC8344B76EFFE7460F39F4 /* Pods-ArpSlider#2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArpSlider#2.debug.xcconfig"; path = "Target Support Files/Pods-ArpSlider#2/Pods-ArpSlider#2.debug.xcconfig"; sourceTree = "<group>"; };
 		72BD0208E65FA684EA612B4B /* Pods-ArpSlider#2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArpSlider#2UITests.debug.xcconfig"; path = "Target Support Files/Pods-ArpSlider#2UITests/Pods-ArpSlider#2UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		96DB11B538413F5ABBB3819C /* Pods-ArpSlider#2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArpSlider#2UITests.release.xcconfig"; path = "Target Support Files/Pods-ArpSlider#2UITests/Pods-ArpSlider#2UITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,7 +137,6 @@
 				72BD0208E65FA684EA612B4B /* Pods-ArpSlider#2UITests.debug.xcconfig */,
 				96DB11B538413F5ABBB3819C /* Pods-ArpSlider#2UITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -137,8 +168,10 @@
 				532745D423A1FF5D00F1A458 /* AppDelegate.swift */,
 				532745D623A1FF5D00F1A458 /* SceneDelegate.swift */,
 				532745D823A1FF5D00F1A458 /* ContentView.swift */,
-				5327460623A2002000F1A458 /* TouchPad.swift */,
-				5327460423A2001300F1A458 /* Rect.swift */,
+				539A7ECB23F275E000DF21ED /* Views */,
+				539A7ECC23F275F900DF21ED /* Models */,
+				539A7ECF23F27B6B00DF21ED /* MIDI */,
+				53C8DAF623F0CF4700C750B5 /* Unfinished Views */,
 				532745DA23A1FF5E00F1A458 /* Assets.xcassets */,
 				532745DF23A1FF5E00F1A458 /* LaunchScreen.storyboard */,
 				532745E223A1FF5E00F1A458 /* Info.plist */,
@@ -173,6 +206,52 @@
 			path = "ArpSlider#2UITests";
 			sourceTree = "<group>";
 		};
+		539A7ECB23F275E000DF21ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5327460623A2002000F1A458 /* TouchPad.swift */,
+				53C8DB0323F0F13C00C750B5 /* ChordsView.swift */,
+				537B121223EF9ACD00622CC4 /* TempADSRView.swift */,
+				53C8DAFB23F0D99C00C750B5 /* DelayView.swift */,
+				53C8DB0123F0E8DD00C750B5 /* FilterView.swift */,
+				53C8DAF723F0D0AB00C750B5 /* OscParameterView.swift */,
+				5327460423A2001300F1A458 /* Rect.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		539A7ECC23F275F900DF21ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53D7B12C23EE7B6700224C29 /* Synth.swift */,
+				539A7ECD23F2776400DF21ED /* Sequencer.swift */,
+				53C8DAF923F0D53400C750B5 /* Parameters.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		539A7ECF23F27B6B00DF21ED /* MIDI */ = {
+			isa = PBXGroup;
+			children = (
+				539A7ED023F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid */,
+				53C8DB0523F0FD4400C750B5 /* Array Of Chords.mid */,
+			);
+			path = MIDI;
+			sourceTree = "<group>";
+		};
+		53C8DAF623F0CF4700C750B5 /* Unfinished Views */ = {
+			isa = PBXGroup;
+			children = (
+				53C8DB0723F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift */,
+				53C8DAFF23F0DD6100C750B5 /* ParameterSlider.swift */,
+				53D7B13223EEA64A00224C29 /* VSlider.swift */,
+				5349C5B023A472230052B716 /* ADSRView.swift */,
+				535585DC23ADC3E000F832FD /* ADSRFrame.swift */,
+				5349C5B223A474780052B716 /* PotentiometerView.swift */,
+			);
+			path = "Unfinished Views";
+			sourceTree = "<group>";
+		};
 		80910012D2249CE04008A9D8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +273,7 @@
 				532745CD23A1FF5D00F1A458 /* Sources */,
 				532745CE23A1FF5D00F1A458 /* Frameworks */,
 				532745CF23A1FF5D00F1A458 /* Resources */,
+				53D7B12B23EE6E4F00224C29 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -292,6 +372,8 @@
 			files = (
 				532745E123A1FF5E00F1A458 /* LaunchScreen.storyboard in Resources */,
 				532745DE23A1FF5E00F1A458 /* Preview Assets.xcassets in Resources */,
+				539A7ED123F27C0500DF21ED /*  Glass Tiger Beaming Lead #2.mid in Resources */,
+				53C8DB0623F0FD4400C750B5 /* Array Of Chords.mid in Resources */,
 				532745DB23A1FF5E00F1A458 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,6 +416,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		53D7B12B23EE6E4F00224C29 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		95FC73CD905789B00B0019AE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -388,9 +488,23 @@
 			files = (
 				532745D523A1FF5D00F1A458 /* AppDelegate.swift in Sources */,
 				532745D723A1FF5D00F1A458 /* SceneDelegate.swift in Sources */,
+				5349C5B123A472230052B716 /* ADSRView.swift in Sources */,
 				532745D923A1FF5D00F1A458 /* ContentView.swift in Sources */,
 				5327460723A2002000F1A458 /* TouchPad.swift in Sources */,
+				53C8DB0823F104FD00C750B5 /* OutputWaveformPlotRepresentable.swift in Sources */,
+				5349C5B323A474780052B716 /* PotentiometerView.swift in Sources */,
+				53D7B12D23EE7B6700224C29 /* Synth.swift in Sources */,
+				53C8DB0023F0DD6100C750B5 /* ParameterSlider.swift in Sources */,
+				53D7B13323EEA64A00224C29 /* VSlider.swift in Sources */,
+				53C8DAFC23F0D99C00C750B5 /* DelayView.swift in Sources */,
+				539A7ECE23F2776400DF21ED /* Sequencer.swift in Sources */,
 				5327460523A2001400F1A458 /* Rect.swift in Sources */,
+				53C8DB0423F0F13C00C750B5 /* ChordsView.swift in Sources */,
+				537B121323EF9ACD00622CC4 /* TempADSRView.swift in Sources */,
+				53C8DB0223F0E8DD00C750B5 /* FilterView.swift in Sources */,
+				53C8DAFA23F0D53400C750B5 /* Parameters.swift in Sources */,
+				53C8DAF823F0D0AB00C750B5 /* OscParameterView.swift in Sources */,
+				535585DD23ADC3E000F832FD /* ADSRFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
